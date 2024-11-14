@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   </head>
 
@@ -17,10 +18,10 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-6">
-              <img class="u-align-left u-image u-image-default u-image-1" src="https://assets.nicepagecdn.com/51f4b7da/6305210/images/LeasePixie.png" alt="" style="filter: invert(0);margin-top:4px;margin-left:26px;max-width: 101px;width: 100%;">
+              <img class="u-align-left u-image u-image-default u-image-1" src="https://assets.nicepagecdn.com/51f4b7da/6305210/images/LeasePixie.png" alt="" style="filter: invert(0);max-width: 140px;width: 100%;">
             </div>
             <div class="col-md-6 col-sm-6 text-right">
-              <button class="hamburger-button" onclick="toggleMenu()" aria-label="Open Menu"><img class="hamburger-icon" src="img/menu-01.svg" style="margin-right: 24px;" alt="Menu" /></button>
+              <button class="hamburger-button" onclick="toggleMenu()" aria-label="Open Menu"><img class="hamburger-icon" src="img/menu-01.svg" alt="Menu" /></button>
               <div id="hamburger-menu">
                 <div class="header_menu">
                   <ul>
@@ -89,31 +90,126 @@
                 <div class="heading">
                   <div class="text-wrapper-2">Tasks</div>
                   <div class="top_features">
-                    <div class="frame-6">
-                      <div class="text-wrapper-3">M</div>
-                      <img class="img-2" src="img/switch-vertical-01.svg" />
+                    <div class="filter_icon">
+                      <div class="filter_open">
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        <div class="open_menu filter_menu">
+                          <div class="department_info">
+                            <div class="menu_title">
+                              <span><strong>Department</strong></span>
+                              <p>select all</p>
+                            </div>
+                            <div class="form-group">
+                              <input type="checkbox" name="maintenance" value="maintenance" id="maintenance">
+                              <label>Maintenance</label>
+                            </div>
+                            <div class="form-group">
+                              <input type="checkbox" name="property" value="property" id="property">
+                              <label>Property</label>
+                            </div>
+                            <div class="form-group">
+                              <input type="checkbox" name="lease" value="lease" id="lease">
+                              <label>Lease</label>
+                            </div>
+                            <div class="form-group">
+                              <input type="checkbox" name="accounting" value="accounting" id="accounting">
+                              <label>Accounting</label>
+                            </div>
+                          </div>
+                          <div class="workflow_status">
+                            <div class="menu_title">
+                              <span><strong>Workflow status</strong></span>
+                              <p>select all</p>
+                            </div>
+                            <div class="form-group">
+                              <input type="checkbox" name="opentasks" value="opentasks" id="open_tasks">
+                              <label>Open tasks</label>
+                            </div>
+                            <div class="form-group">
+                              <input type="checkbox" name="closedtasks" value="closedtasks" id="closed_tasks">
+                              <label>Closed tasks</label>
+                            </div>
+                          </div>
+                          <div class="sort_order">
+                            <div class="menu_title">
+                              <span><strong>Sort oder</strong></span>
+                              <p>select all</p>
+                            </div>
+                            <div class="form-group">
+                              <input type="checkbox" name="recenttop" value="recenttop" id="recent_top">
+                              <label>Recent on top</label>
+                            </div>
+                            <div class="form-group">
+                              <input type="checkbox" name="recentbottom" value="recentbottom" id="recent_bottom">
+                              <label>Recent on bottom</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="filter_refresh">
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                      </div>
+                      <div class="filter_add">
+                        <i class="fa-solid fa-plus"></i>
+                        <div class="add_menu filter_menu">
+                          <div class="menu_space">
+                            <div class="menu_title">
+                              <span><strong>Add task</strong></span>
+                              <i class="fa-solid fa-xmark"></i>
+                            </div>
+                            <div class="bg_white">
+                              <p>Subway payment for the month has not been processed</p>
+                            </div>
+                            <div class="add_item_form">
+                              <div class="form-group">
+                                <label for="workflow">Workflow</label>
+                                <input type="text" placeholder="Enter Workflow">
+                              </div>
+                              <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="text" placeholder="Enter date">
+                              </div>
+                              <div class="form-group">
+                                <label for="location*">Location</label>
+                                <input type="text" placeholder="Enter city">
+                              </div>
+                              <button type="button" id="add">Add</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="filter_search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                      </div>
                     </div>
-                    <img class="img-2" src="img/refresh-ccw-01.svg" />
-                    <img class="img" src="img/plus.svg" />
                   </div>
+                </div>
+                <div class="filter_drop_down">
+                  <label for="cars">Sort by</label>
+                  <select name="filter_sort_by" id="filter_sort_by">
+                    <option value="Maintenance, Open task, Recent">Maintenance, Open task, Recent</option>
+                    <option value="Maintenance, Open task, Recent">Maintenance, Open task, Recent</option>
+                    <option value="Maintenance, Open task, Recent">Maintenance, Open task, Recent</option>
+                    <option value="Maintenance, Open task, Recent">Maintenance, Open task, Recent</option>
+                  </select>
                 </div>
                 <div class="latest_news_box">
                   <div class="flex_wrap_box">
-                    <div class="rectangle-2"></div>
+                    <div class="rectangle-1"></div>
                     <div class="tile-revised">
                       <div class="div-wrapper">
-                        <p class="text-wrapper-4">Ceiling tile replacement after roof leak</p>
-                        <div class="div-3">Tenant Maintenance (workflow title)</div>
+                        <p class="text-wrapper-4">Roof leak at Dominos Pizza</p>
+                        <div class="div-3">Maintenance (Workflow title here 26 Char limit)</div>
                         <div class="frame-11">
-                          <div class="div-3">5 days ago (07/12/24)</div>
-                          <div class="ellipse"></div>
+                          <div class="div-3">06/05/23 -> 1 days ago</div>
+                          <div class="ellipse-1"></div>
                           <div class="div-3">Seattle (unit)</div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="flex_wrap_box">
-                    <div class="rectangle-3"></div>
+                    <div class="rectangle-2"></div>
                         <div class="tile-revised-2">
                           <div class="div-wrapper">
                             <p class="text-wrapper-4">Future occupancy planning</p>
@@ -127,7 +223,7 @@
                         </div>
                   </div>
                   <div class="flex_wrap_box">
-                    <div class="rectangle-4"></div>
+                    <div class="rectangle-3"></div>
                       <div class="tile-revised-2">
                         <div class="div-wrapper">
                           <p class="text-wrapper-4">Returned payments</p>
@@ -141,14 +237,14 @@
                       </div>
                   </div>
                   <div class="flex_wrap_box">
-                    <div class="rectangle-3"></div>
+                    <div class="rectangle-4"></div>
                     <div class="tile-revised-2">
                       <div class="div-wrapper">
                         <p class="text-wrapper-4">Future occupancy planning</p>
                         <div class="div-3">Future planning (workflow title)</div>
                         <div class="frame-11">
                           <div class="div-3">5 days ago (07/12/24)</div>
-                          <div class="ellipse-2"></div>
+                          <div class="ellipse-4"></div>
                           <div class="div-3">Seattle (unit)</div>
                         </div>
                       </div>
@@ -162,49 +258,63 @@
                         <div class="div-3">Tenant Maintenance (workflow title)</div>
                         <div class="frame-11">
                           <div class="div-3">5 days ago (07/12/24)</div>
-                          <div class="ellipse-4"></div>
+                          <div class="ellipse-5"></div>
                           <div class="div-3">Seattle (unit)</div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="flex_wrap_box">
-                    <div class="rectangle-2"></div>
+                    <div class="rectangle-6"></div>
                     <div class="tile-revised-2">
                       <div class="div-wrapper">
                         <p class="text-wrapper-4">Ceiling tile replacement after roof leak</p>
                         <div class="div-3">Tenant Maintenance (workflow title)</div>
                         <div class="frame-11">
                           <div class="div-3">5 days ago (07/12/24)</div>
-                          <div class="ellipse"></div>
+                          <div class="ellipse-6"></div>
                           <div class="div-3">Seattle (unit)</div>
                         </div>                        
                       </div>
                     </div>
                   </div>
                   <div class="flex_wrap_box">
-                    <div class="rectangle-5"></div>
+                    <div class="rectangle-7"></div>
                     <div class="tile-revised-2">
                       <div class="div-wrapper">
                         <p class="text-wrapper-4">[Maintenance title]</p>
                         <div class="div-3">Tenant Maintenance (workflow title)</div>
                         <div class="frame-11">
                           <div class="div-3">5 days ago (07/12/24)</div>
-                          <div class="ellipse-4"></div>
+                          <div class="ellipse-7"></div>
                           <div class="div-3">Seattle (unit)</div>
                         </div>                        
                       </div>
                     </div>
                   </div>
                   <div class="flex_wrap_box">
-                    <div class="rectangle-4"></div>
+                    <div class="rectangle-8"></div>
                     <div class="tile-revised-2">
                       <div class="div-wrapper">
                         <p class="text-wrapper-4">Returned payments</p>
                         <div class="div-3">Payments (workflow title)</div>
                         <div class="frame-11">
                           <div class="div-3">5 days ago (07/12/24)</div>
-                          <div class="ellipse-3"></div>
+                          <div class="ellipse-8"></div>
+                          <div class="div-3">Seattle (unit)</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex_wrap_box">
+                    <div class="rectangle-9"></div>
+                    <div class="tile-revised-2">
+                      <div class="div-wrapper">
+                        <p class="text-wrapper-4">Returned payments</p>
+                        <div class="div-3">Payments (workflow title)</div>
+                        <div class="frame-11">
+                          <div class="div-3">5 days ago (07/12/24)</div>
+                          <div class="ellipse-9"></div>
                           <div class="div-3">Seattle (unit)</div>
                         </div>
                       </div>
@@ -231,25 +341,25 @@
                       <div id="graph1" class="tab-content">
                         <p>Graphs</p>
                         <a href="#"><!-- when click download pdf -->
-                          <img src="graph_1.png">
+                          <img src="graph-1.png">
                         </a>
                         <a href="#"><!-- when click download pdf -->
-                          <img src="graph_2.png">
+                          <img src="graph-2.png">
                         </a>
                         <a href="#"><!-- when click download pdf -->
-                          <img src="graph_2.png">
+                          <img src="graph-3.png">
                         </a>
                       </div>
                       <div id="report2" class="tab-content">                      
                         <p>Reports</p>
                         <a href="#"><!-- when click download pdf -->
-                          <img src="graph_1.png">
+                          <img src="graph-1.png">
                         </a>
                         <a href="#"><!-- when click download pdf -->
-                          <img src="graph_2.png">
+                          <img src="graph-2.png">
                         </a>
                         <a href="#"><!-- when click download pdf -->
-                          <img src="graph_2.png">
+                          <img src="graph-3.png">
                         </a>
                       </div>
                     </div> <!-- END tabs-content -->
@@ -260,12 +370,20 @@
                         <div class="content">
                           <div class="div-2"><div class="text">3 selected</div></div>
                         </div>
-                        <img class="img-3" src="img/chevron-down.svg" />
+                        <img class="img-3" src="img/graph-3.png" />
                       </div>
                     </div>
                   </div> -->
                 </div>
               </div>
+            </div>
+            <div class="tenant_drop_down">
+              <select name="tenant" id="tenant">
+                <option value="Bottom 20% Tenant">Bottom 20% Tenant</option>
+                <option value="Tenant 2">Tenant 2</option>
+                <option value="Tenant 3">Tenant 3</option>
+                <option value="Tenant 4">Tenant 4</option>
+              </select>
             </div>
           </div>
           
@@ -274,13 +392,22 @@
               <div class="portfolio_box">
                 <div class="heading-2">
                   <div class="text-wrapper-2">Properties and Portfolios</div>
-                  <div class="top_features">
-                    <div class="frame-6">
-                      <div class="text-wrapper-3">M</div>
-                      <img class="img-2" src="img/switch-vertical-01.svg" />
+                  <!-- <div class="top_features">
+                    <div class="filter_icon">
+                      <div class="filter_open">
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                      </div>
+                      <div class="filter_refresh">
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                      </div>
+                      <div class="filter_add">
+                        <i class="fa-solid fa-plus"></i>
+                      </div>
+                      <div class="filter_search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                      </div>
                     </div>
-                    <img class="img" src="img/search-lg.svg" />
-                  </div>
+                  </div> -->
                 </div>
                 <div class="portfolio_tabbing">
                   <div class="tabs">
@@ -300,21 +427,21 @@
                         <div class="info_detail">
                           <div class="detail_step">
                             <ul>
-                              <li><div class="ellipse-4"></div></li>
+                              <li><div class="ellipse-1"></div></li>
                               <li><div class="div-3">Maintenance (4)</div></li>
                             </ul>
                             <ul>
-                              <li><div class="ellipse"></div></li>
+                              <li><div class="ellipse-2"></div></li>
                               <li><div class="div-3">Property (6)</div></li>
                             </ul>
                           </div>
                           <div class="detail_step">
                             <ul>
-                              <li><div class="ellipse-2"></div></li>
+                              <li><div class="ellipse-3"></div></li>
                               <li><div class="div-3">Leasing (4)</div></li>
                             </ul>
                             <ul>
-                              <li><div class="ellipse-3"></div></li>
+                              <li><div class="ellipse-4"></div></li>
                               <li><div class="div-3">Leasing (4)</div></li>
                             </ul>
                           </div>
@@ -328,21 +455,21 @@
                         <div class="info_detail">
                           <div class="detail_step">
                             <ul>
-                              <li><div class="ellipse-4"></div></li>
+                              <li><div class="ellipse-1"></div></li>
                               <li><div class="div-3">Maintenance (4)</div></li>
                             </ul>
                             <ul>
-                              <li><div class="ellipse"></div></li>
+                              <li><div class="ellipse-2"></div></li>
                               <li><div class="div-3">Property (6)</div></li>
                             </ul>
                           </div>
                           <div class="detail_step">
                             <ul>
-                              <li><div class="ellipse-2"></div></li>
+                              <li><div class="ellipse-3"></div></li>
                               <li><div class="div-3">Leasing (4)</div></li>
                             </ul>
                             <ul>
-                              <li><div class="ellipse-3"></div></li>
+                              <li><div class="ellipse-4"></div></li>
                               <li><div class="div-3">Leasing (4)</div></li>
                             </ul>
                           </div>
@@ -356,49 +483,21 @@
                         <div class="info_detail">
                           <div class="detail_step">
                             <ul>
-                              <li><div class="ellipse-4"></div></li>
+                              <li><div class="ellipse-1"></div></li>
                               <li><div class="div-3">Maintenance (4)</div></li>
                             </ul>
                             <ul>
-                              <li><div class="ellipse"></div></li>
+                              <li><div class="ellipse-2"></div></li>
                               <li><div class="div-3">Property (6)</div></li>
                             </ul>
                           </div>
                           <div class="detail_step">
                             <ul>
-                              <li><div class="ellipse-2"></div></li>
-                              <li><div class="div-3">Leasing (4)</div></li>
-                            </ul>
-                            <ul>
                               <li><div class="ellipse-3"></div></li>
                               <li><div class="div-3">Leasing (4)</div></li>
                             </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="portfolio_info">
-                        <div class="info_title">
-                          <div class="text-wrapper-11">Waterfront village</div>
-                          <p class="text-wrapper-12">1452 Banksville Road, Pittsburgh, PA</p>
-                        </div>
-                        <div class="info_detail">
-                          <div class="detail_step">
                             <ul>
                               <li><div class="ellipse-4"></div></li>
-                              <li><div class="div-3">Maintenance (4)</div></li>
-                            </ul>
-                            <ul>
-                              <li><div class="ellipse"></div></li>
-                              <li><div class="div-3">Property (6)</div></li>
-                            </ul>
-                          </div>
-                          <div class="detail_step">
-                            <ul>
-                              <li><div class="ellipse-2"></div></li>
-                              <li><div class="div-3">Leasing (4)</div></li>
-                            </ul>
-                            <ul>
-                              <li><div class="ellipse-3"></div></li>
                               <li><div class="div-3">Leasing (4)</div></li>
                             </ul>
                           </div>
@@ -415,21 +514,21 @@
                         <div class="info_detail">
                           <div class="detail_step">
                             <ul>
-                              <li><div class="ellipse-4"></div></li>
+                              <li><div class="ellipse-1"></div></li>
                               <li><div class="div-3">Maintenance (4)</div></li>
                             </ul>
                             <ul>
-                              <li><div class="ellipse"></div></li>
+                              <li><div class="ellipse-2"></div></li>
                               <li><div class="div-3">Property (6)</div></li>
                             </ul>
                           </div>
                           <div class="detail_step">
                             <ul>
-                              <li><div class="ellipse-2"></div></li>
+                              <li><div class="ellipse-3"></div></li>
                               <li><div class="div-3">Leasing (4)</div></li>
                             </ul>
                             <ul>
-                              <li><div class="ellipse-3"></div></li>
+                              <li><div class="ellipse-4"></div></li>
                               <li><div class="div-3">Leasing (4)</div></li>
                             </ul>
                           </div>
@@ -443,21 +542,21 @@
                         <div class="info_detail">
                           <div class="detail_step">
                             <ul>
-                              <li><div class="ellipse-4"></div></li>
+                              <li><div class="ellipse-1"></div></li>
                               <li><div class="div-3">Maintenance (4)</div></li>
                             </ul>
                             <ul>
-                              <li><div class="ellipse"></div></li>
+                              <li><div class="ellipse-2"></div></li>
                               <li><div class="div-3">Property (6)</div></li>
                             </ul>
                           </div>
                           <div class="detail_step">
                             <ul>
-                              <li><div class="ellipse-2"></div></li>
+                              <li><div class="ellipse-3"></div></li>
                               <li><div class="div-3">Leasing (4)</div></li>
                             </ul>
                             <ul>
-                              <li><div class="ellipse-3"></div></li>
+                              <li><div class="ellipse-4"></div></li>
                               <li><div class="div-3">Leasing (4)</div></li>
                             </ul>
                           </div>
@@ -471,49 +570,52 @@
                         <div class="info_detail">
                           <div class="detail_step">
                             <ul>
-                              <li><div class="ellipse-4"></div></li>
+                              <li><div class="ellipse-1"></div></li>
                               <li><div class="div-3">Maintenance (4)</div></li>
                             </ul>
                             <ul>
-                              <li><div class="ellipse"></div></li>
+                              <li><div class="ellipse-2"></div></li>
                               <li><div class="div-3">Property (6)</div></li>
                             </ul>
                           </div>
                           <div class="detail_step">
                             <ul>
-                              <li><div class="ellipse-2"></div></li>
+                              <li><div class="ellipse-3"></div></li>
                               <li><div class="div-3">Leasing (4)</div></li>
                             </ul>
                             <ul>
-                              <li><div class="ellipse-3"></div></li>
+                              <li><div class="ellipse-4"></div></li>
                               <li><div class="div-3">Leasing (4)</div></li>
                             </ul>
                           </div>
                         </div>
                       </div>
                     </div>
-
-
-
-
-
-
                   </div>
                 </div>
               </div>
               <div class="user_info mt-20">
                 <div class="heading-2">
                   <div class="text-wrapper-2">Users</div>
-                  <div class="top_features">
-                    <div class="frame-6">
-                      <div class="text-wrapper-3">M</div>
-                      <img class="img-2" src="img/switch-vertical-01.svg" />
+                  <!-- <div class="top_features">
+                    <div class="filter_icon">
+                      <div class="filter_open">
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                      </div>
+                      <div class="filter_refresh">
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                      </div>
+                      <div class="filter_add">
+                        <i class="fa-solid fa-plus"></i>
+                      </div>
+                      <div class="filter_search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                      </div>
                     </div>
-                    <img class="img" src="img/search-lg.svg" />
-                  </div>
+                  </div> -->
                 </div>
-                <div class="frame-27">
-                  <div class="frame-28">
+                <div class="user_detail">
+                  <div class="user_1">
                     <div class="frame-29">
                       <div class="frame-30">
                         <div class="frame-31">
@@ -537,7 +639,7 @@
                       <div class="address">1452 Banksville Road, Pittsburgh, PA&#34;</div>
                     </div>
                   </div>
-                  <div class="frame-28">
+                  <div class="user_2">
                     <div class="frame-29">
                       <div class="frame-30">
                         <div class="frame-31">
@@ -605,7 +707,7 @@
     $(document).on("click", function() {
         $(".sub_menu_item").removeClass("show");
     });
-});
+  });
   </script>
   <script>
         // Show the first tab and hide the rest
@@ -640,6 +742,49 @@
           $(activeTab).fadeIn();
           return false;
         });
+  </script>
+  <script>
+  $(document).ready(function() {
+    // Toggle class on clicking the icon
+    $(".filter_open").on("click", function(event) {
+        $(this).toggleClass("filter_open_menu"); // Toggle the menu class on the icon
+        // Prevent the click from propagating further
+        event.stopPropagation();
+    });
+    // Prevent clicks inside .filter_menu from closing the menu
+    $(".open_menu").on("click", function(event) {
+        event.stopPropagation(); // Prevent click events inside .filter_menu from affecting .filter_open
+    });
+
+    // When clicking outside, close the menu if .filter_open_menu is active
+    $(document).on("click", function() {
+        $(".filter_open").removeClass("filter_open_menu"); // Remove the menu class only on clicking outside
+    });
+  });
+
+  $(document).ready(function() {
+    // Toggle class on clicking the icon
+    $(".filter_add").on("click", function(event) {
+        $(this).toggleClass("filter_add_menu"); // Toggle the menu class on the icon
+        // Prevent the click from propagating further
+        event.stopPropagation();
+    });
+    // Prevent clicks inside .filter_menu from closing the menu
+    $(".add_menu").on("click", function(event) {
+        event.stopPropagation(); // Prevent click events inside .filter_menu from affecting .filter_add
+    });
+    // When clicking outside, close the menu if .filter_add_menu is active
+    $(document).on("click", function() {
+        $(".filter_add").removeClass("filter_add_menu"); // Remove the menu class only on clicking outside
+    });
+  });
+
+
+
+    
+
+
+    
   </script>
   </body>
 </html>
