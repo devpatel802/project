@@ -135,7 +135,7 @@ header.frame-wrapper .row .text-right {text-align: right;position: relative;}
 .dashboard-menu li.sub_menu_item.show ul.sub_menu {display: block;}
 .dashboard-menu li.sub_menu_item.show p {font-weight: bold;}
 .dashboard-menu li.sub_menu_item p {margin: 0;}
-.hamburger-button {background: none; border: none; padding: 0;cursor: pointer; /* Change cursor to pointer */float: right;}
+.hamburger-button {display:flex;background: none; border: none; padding: 0;cursor: pointer; /* Change cursor to pointer */float: right;}
 .dashboard-menu .text-wrapper-2 {position: relative;padding-top: 10px;padding-bottom: 10px;width: fit-content;color: var(--gray-950);font-size: var(--text-xl-bold-font-size);letter-spacing: var(--text-xl-bold-letter-spacing);line-height: var(--text-xl-bold-line-height);font-weight: bold;}
 .dashboard-menu .text-wrapper-12 {position: relative;width: fit-content;margin-top: -1.00px;color: var(--gray-500);font-size: 12px;line-height: 15px;}
 .dashboard-menu .text-wrapper-11 {position: relative;color: #232323;font-size: 16px;line-height: 30px;font-weight: bold;}
