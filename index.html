@@ -14,19 +14,19 @@
 
   <body>
     <div class="dashboard-menu">
-      <header class="frame-wrapper">
+      <header class="frame-wrapper" style="margin: 0px auto 30px 0px">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-6">
-              <img class="u-align-left u-image u-image-default u-image-1" src="https://assets.nicepagecdn.com/51f4b7da/6305210/images/LeasePixie.png" alt="" style="filter: invert(0);max-width: 140px;width: 100%;">
+              <img class="u-align-left u-image u-image-default u-image-1" src="https://assets.nicepagecdn.com/51f4b7da/6305210/images/LeasePixie.png" alt="" style="filter: invert(0);max-width: 140px;width: 104px;margin-top: 4px;height:23px">
             </div>
             <div class="col-md-6 col-sm-6 text-right">
               <button class="hamburger-button" onclick="toggleMenu()" aria-label="Open Menu"><img class="hamburger-icon" src="img/menu-01.svg" alt="Menu" /></button>
               <div id="hamburger-menu">
                 <div class="header_menu">
                   <ul>
-                    <li>User list</li>
-                    <li class="sub_menu_item">
+                    <li>User Settings</li>
+                    <!-- <li class="sub_menu_item">
                       <p>Accounting</p>
                         <div class="sub_menu_arrow">
                           <div class="open_arrow">
@@ -71,7 +71,7 @@
                         <li>Sub category 2</li>
                       </ul>
                     </li>
-                    <li>Portfolio settings</li>
+                    <li>Portfolio settings</li> -->
                   </ul>
                   <div class="graphs-wrapper"><div class="text-wrapper-5">Sign out</div></div>
                 </div>
@@ -178,20 +178,16 @@
                           </div>
                         </div>
                       </div>
-                      <div class="filter_search">
+                      <div class="filter_search" style="display: none;">
                         <i class="fa-solid fa-magnifying-glass"></i>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="filter_drop_down">
-                  <label for="cars">Sort by</label>
-                  <select name="filter_sort_by" id="filter_sort_by">
-                    <option value="Maintenance, Open task, Recent">Maintenance, Open task, Recent</option>
-                    <option value="Maintenance, Open task, Recent">Maintenance, Open task, Recent</option>
-                    <option value="Maintenance, Open task, Recent">Maintenance, Open task, Recent</option>
-                    <option value="Maintenance, Open task, Recent">Maintenance, Open task, Recent</option>
-                  </select>
+                <div class="filter_search_box">
+                  <form class="search-box">
+                    <input type="search" name="focus" placeholder="Search" id="search-input" value="">
+                  </form>
                 </div>
                 <div class="latest_news_box">
                   <div class="flex_wrap_box">
@@ -351,16 +347,91 @@
                         </a>
                       </div>
                       <div id="report2" class="tab-content">                      
-                        <p>Reports</p>
-                        <a href="#"><!-- when click download pdf -->
-                          <img src="graph-1.png">
-                        </a>
-                        <a href="#"><!-- when click download pdf -->
-                          <img src="graph-2.png">
-                        </a>
-                        <a href="#"><!-- when click download pdf -->
-                          <img src="graph-3.png">
-                        </a>
+                        <p>Property list</p>
+                        <div class="portfolio_info">
+                            <div class="info_title">
+                                <div class="text-wrapper-11">35CHAR Use this card circular bar color..</div>
+                                <div class="detail_info_property">
+                                    <ul class="info_property">
+                                        <li><strong class="pro_num">5</strong> properties</li>
+                                        <li><strong class="pro_size">89000</strong> sqft</li>
+                                    </ul>
+                                    <div class="pro_rate">
+                                        <span><img src="loader.png"> 88%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_info">
+                            <div class="info_title">
+                                <div class="text-wrapper-11">Add static filter/text bar just like reports </div>
+                                <div class="detail_info_property">
+                                    <ul class="info_property">
+                                        <li><strong class="pro_num">5</strong> properties</li>
+                                        <li><strong class="pro_size">89000</strong> sqft</li>
+                                    </ul>
+                                    <div class="pro_rate">
+                                        <span><img src="loader.png"> 88%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_info">
+                            <div class="info_title">
+                                <div class="text-wrapper-11">Grant street Reality Holdings</div>
+                                <div class="detail_info_property">
+                                    <ul class="info_property">
+                                        <li><strong class="pro_num">5</strong> properties</li>
+                                        <li><strong class="pro_size">89000</strong> sqft</li>
+                                    </ul>
+                                    <div class="pro_rate">
+                                        <span><img src="loader.png"> 88%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_info">
+                            <div class="info_title">
+                                <div class="text-wrapper-11">Grant street Reality Holdings</div>
+                                <div class="detail_info_property">
+                                    <ul class="info_property">
+                                        <li><strong class="pro_num">5</strong> properties</li>
+                                        <li><strong class="pro_size">89000</strong> sqft</li>
+                                    </ul>
+                                    <div class="pro_rate">
+                                        <span><img src="loader.png"> 88%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_info">
+                            <div class="info_title">
+                                <div class="text-wrapper-11">Grant street Reality Holdings</div>
+                                <div class="detail_info_property">
+                                    <ul class="info_property">
+                                        <li><strong class="pro_num">5</strong> properties</li>
+                                        <li><strong class="pro_size">89000</strong> sqft</li>
+                                    </ul>
+                                    <div class="pro_rate">
+                                        <span><img src="loader.png"> 88%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_info">
+                            <div class="info_title">
+                                <div class="text-wrapper-11">Grant street Reality Holdings</div>
+                                <div class="detail_info_property">
+                                    <ul class="info_property">
+                                        <li><strong class="pro_num">5</strong> properties</li>
+                                        <li><strong class="pro_size">89000</strong> sqft</li>
+                                    </ul>
+                                    <div class="pro_rate">
+                                        <span><img src="loader.png"> 88%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                       </div>
                     </div> <!-- END tabs-content -->
                   </div> <!-- END tabs -->
@@ -505,91 +576,49 @@
                       </div>
                     </div>
                     <div id="portfolio2" class="tab-content">
-                      <p>Portfolio list</p>
-                      <div class="portfolio_info">
-                        <div class="info_title">
-                          <div class="text-wrapper-11">Waterfront village</div>
-                          <p class="text-wrapper-12">1452 Banksville Road, Pittsburgh, PA</p>
-                        </div>
-                        <div class="info_detail">
-                          <div class="detail_step">
-                            <ul>
-                              <li><div class="ellipse-1"></div></li>
-                              <li><div class="div-3">Maintenance (4)</div></li>
+                       <p>Portfolio list</p>
+                       <div class="download_pdf">
+                        <ul class="title_pdf">
+                            <li>Name</li>
+                            <li>File type/size</li>
+                        </ul>
+                        <a href="#" class="download_here">
+                            <ul class="pdf_flex_wrap">
+                                <li>22 Char Limit</li>
+                                <li>PDF / 1.2 GB</li>
                             </ul>
-                            <ul>
-                              <li><div class="ellipse-2"></div></li>
-                              <li><div class="div-3">Property (6)</div></li>
+                        </a>
+                        <a href="#" class="download_here">
+                            <ul class="pdf_flex_wrap">
+                                <li>08/23 Bank Transaction</li>
+                                <li>PDF / 1.2 GB</li>
                             </ul>
-                          </div>
-                          <div class="detail_step">
-                            <ul>
-                              <li><div class="ellipse-3"></div></li>
-                              <li><div class="div-3">Leasing (4)</div></li>
+                        </a>
+                        <a href="#" class="download_here">
+                            <ul class="pdf_flex_wrap">
+                                <li>07/23 Rent Roll</li>
+                                <li>PDF / 1.2 GB</li>
                             </ul>
-                            <ul>
-                              <li><div class="ellipse-4"></div></li>
-                              <li><div class="div-3">Leasing (4)</div></li>
+                        </a>
+                        <a href="#" class="download_here">
+                            <ul class="pdf_flex_wrap">
+                                <li>Renewal report</li>
+                                <li>PDF / 1.2 GB</li>
                             </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="portfolio_info">
-                        <div class="info_title">
-                          <div class="text-wrapper-11">Waterfront village</div>
-                          <p class="text-wrapper-12">1452 Banksville Road, Pittsburgh, PA</p>
-                        </div>
-                        <div class="info_detail">
-                          <div class="detail_step">
-                            <ul>
-                              <li><div class="ellipse-1"></div></li>
-                              <li><div class="div-3">Maintenance (4)</div></li>
+                        </a>
+                        <a href="#" class="download_here">
+                            <ul class="pdf_flex_wrap">
+                                <li>22 Char Limit</li>
+                                <li>PDF / 1.2 GB</li>
                             </ul>
-                            <ul>
-                              <li><div class="ellipse-2"></div></li>
-                              <li><div class="div-3">Property (6)</div></li>
+                        </a>
+                        <a href="#" class="download_here">
+                            <ul class="pdf_flex_wrap">
+                                <li>22 Char Limit</li>
+                                <li>PDF / 1.2 GB</li>
                             </ul>
-                          </div>
-                          <div class="detail_step">
-                            <ul>
-                              <li><div class="ellipse-3"></div></li>
-                              <li><div class="div-3">Leasing (4)</div></li>
-                            </ul>
-                            <ul>
-                              <li><div class="ellipse-4"></div></li>
-                              <li><div class="div-3">Leasing (4)</div></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="portfolio_info">
-                        <div class="info_title">
-                          <div class="text-wrapper-11">Waterfront village</div>
-                          <p class="text-wrapper-12">1452 Banksville Road, Pittsburgh, PA</p>
-                        </div>
-                        <div class="info_detail">
-                          <div class="detail_step">
-                            <ul>
-                              <li><div class="ellipse-1"></div></li>
-                              <li><div class="div-3">Maintenance (4)</div></li>
-                            </ul>
-                            <ul>
-                              <li><div class="ellipse-2"></div></li>
-                              <li><div class="div-3">Property (6)</div></li>
-                            </ul>
-                          </div>
-                          <div class="detail_step">
-                            <ul>
-                              <li><div class="ellipse-3"></div></li>
-                              <li><div class="div-3">Leasing (4)</div></li>
-                            </ul>
-                            <ul>
-                              <li><div class="ellipse-4"></div></li>
-                              <li><div class="div-3">Leasing (4)</div></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+                        </a>
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -613,6 +642,15 @@
                       </div>
                     </div>
                   </div> -->
+                </div>
+                <div class="filter_drop_down">
+                  <!-- <label for="cars">Sort by</label> -->
+                  <select name="filter_sort_by" id="filter_sort_by">
+                    <option value="Maintenance, Open task, Recent">Maintenance, Open task, Recent</option>
+                    <option value="Maintenance, Open task, Recent">Maintenance, Open task, Recent</option>
+                    <option value="Maintenance, Open task, Recent">Maintenance, Open task, Recent</option>
+                    <option value="Maintenance, Open task, Recent">Maintenance, Open task, Recent</option>
+                  </select>
                 </div>
                 <div class="user_detail">
                   <div class="user_1">
