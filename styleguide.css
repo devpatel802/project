@@ -8,6 +8,7 @@
   --basewhite: rgba(255, 255, 255, 1);
   --gray-300: rgba(208, 213, 221, 1);
   --gray-200: rgba(234, 236, 240, 1);
+  --card: rgba(234, 236, 240, 0.5);
   --text-xl-bold-font-family: "Inter", Helvetica;
   --text-xl-bold-font-weight: 700;
   --text-xl-bold-font-size: 20px;

@@ -176,6 +176,18 @@ header.frame-wrapper .row .text-right {text-align: right;position: relative;}
 .download_pdf .download_here ul.pdf_flex_wrap li:first-child {font-weight: 500;text-align: left;}
 .download_pdf .download_here ul.pdf_flex_wrap li {line-height: 25px;}
 
+.box {
+  width: 18px;
+  height: 18px;
+}
+
+.box .ellipse {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  left: 0;
+}
 
 
 @media screen and (max-width: 1201px) {
