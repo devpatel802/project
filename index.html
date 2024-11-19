@@ -150,9 +150,10 @@
                       </div>
                       <div class="filter_add">
                         <i class="fa-solid fa-plus"></i>
-                        
                       </div>
-                      
+                      <div class="filter_search" style="display: none;">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -162,6 +163,32 @@
                   </form>
                 </div>
                 <div class="latest_news_box">
+                  <div class="add_menu filter_menu" style="display: none;">
+                    <div class="menu_space">
+                      <div class="menu_title">
+                        <span><strong>Add task</strong></span>
+                        <i class="fa-solid fa-xmark"></i>
+                      </div>
+                      <div class="bg_white">
+                        <p>Subway payment for the month has not been processed</p>
+                      </div>
+                      <div class="add_item_form">
+                        <div class="form-group">
+                          <label for="workflow">Workflow</label>
+                          <input type="text" placeholder="Enter Workflow">
+                        </div>
+                        <div class="form-group">
+                          <label for="date">Date</label>
+                          <input type="text" placeholder="Enter date">
+                        </div>
+                        <div class="form-group">
+                          <label for="location*">Location</label>
+                          <input type="text" placeholder="Enter city">
+                        </div>
+                        <button type="button" id="add">Add</button>
+                      </div>
+                    </div>
+                  </div>
                   <div class="flex_wrap_box">
                     <div class="rectangle-1"></div>
                     <div class="tile-revised">
@@ -769,28 +796,21 @@
     });
   });
 
-  $(document).ready(function() {
-    // Toggle class on clicking the icon
-    $(".filter_add").on("click", function(event) {
-        $(this).toggleClass("filter_add_menu"); // Toggle the menu class on the icon
-        // Prevent the click from propagating further
-        event.stopPropagation();
-    });
-    // Prevent clicks inside .filter_menu from closing the menu
-    $(".add_menu").on("click", function(event) {
-        event.stopPropagation(); // Prevent click events inside .filter_menu from affecting .filter_add
-    });
-    // When clicking outside, close the menu if .filter_add_menu is active
-    $(document).on("click", function() {
-        $(".filter_add").removeClass("filter_add_menu"); // Remove the menu class only on clicking outside
-    });
+  document.addEventListener("DOMContentLoaded", function() {
+  const filterAdd = document.querySelector('.filter_add');
+  const addMenu = document.querySelector('.add_menu');
+  const closeButton = addMenu.querySelector('.fa-xmark');
+
+  // Toggle the visibility of the add_menu when filter_add is clicked
+  filterAdd.addEventListener('click', function() {
+    addMenu.style.display = addMenu.style.display === 'none' || addMenu.style.display === '' ? 'block' : 'none';
   });
 
-
-
-    
-
-
+  // Close the add_menu when the close button (X) is clicked
+  closeButton.addEventListener('click', function() {
+    addMenu.style.display = 'none';
+  });
+});
     
   </script>
   </body>
