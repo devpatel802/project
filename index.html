@@ -184,47 +184,12 @@
                           <img src="img/refresh.svg">
                         </div>
                         <div class="filter_add">
-                          <img src="img/plus.svg">
+                          <img src="img/plus.svg" alt="Add Workflow">
                         </div>
                         <!-- Add Workflow to... -->
-                          <div class="workflow_add_menu filter_menu" style="display: none;">
-                            <div class="menu_title">
-                              <span><strong>Add Workflow to..</strong></span>
-                              <i class="fa-solid fa-xmark"></i>
-                            </div>
-                            <form id="workflow_decribe">
-                              <textarea name="decribe-wordflow" rows="3" placeholder="2 line text box"></textarea>
-                              <button type="button" id="suggest_workflow">Suggest Workflow</button>
-                              <button type="button" id="skip">Skip</button>
-                            </form>
-                          </div>
+                          
                         <!--  -->
-                        <div class="add_menu filter_menu" style="display: none;">
-                          <div class="menu_space">
-                            <div class="menu_title">
-                              <span><strong>Add task</strong></span>
-                              <i class="fa-solid fa-xmark"></i>
-                            </div>
-                            <div class="bg_white">
-                              <p>Subway payment for the month has not been processed</p>
-                            </div>
-                            <div class="add_item_form">
-                              <div class="form-group">
-                                <label for="workflow">Workflow</label>
-                                <input type="text" placeholder="Enter Workflow">
-                              </div>
-                              <div class="form-group">
-                                <label for="date">Date</label>
-                                <input type="text" placeholder="Enter date">
-                              </div>
-                              <div class="form-group">
-                                <label for="location*">Location</label>
-                                <input type="text" placeholder="Enter city">
-                              </div>
-                              <button type="button" id="add">Add</button>
-                            </div>
-                          </div>
-                        </div>
+                        
                        
                         <div class="filter_search" style="display: none;">
                           <i class="fa-solid fa-magnifying-glass"></i>
@@ -242,6 +207,43 @@
                     </form>
                   </div>
                   <div class="latest_news_box">
+                    <!-- Initially hidden form -->
+                    <form id="workflow_decribe" style="display: none;">
+                      <textarea name="decribe-wordflow" rows="3" placeholder="2 line text box"></textarea>
+                      <button type="button" id="suggest_workflow">Suggest Workflow</button>
+                      <button type="button" id="skip">Skip</button>
+                    </form>
+                  
+                    <!-- Initially hidden Add Menu -->
+                    <div class="add_menu filter_menu" style="display: none;">
+                      <div class="menu_space">
+                        <div class="menu_title">
+                          <span><strong>Add task</strong></span>
+                          <i class="fa-solid fa-xmark"></i>
+                        </div>
+                        <div class="bg_white">
+                          <p>Subway payment for the month has not been processed</p>
+                        </div>
+                        <div class="add_item_form">
+                          <div class="form-group">
+                            <label for="workflow">Workflow</label>
+                            <input type="text" placeholder="Enter Workflow">
+                          </div>
+                          <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="text" placeholder="Enter date">
+                          </div>
+                          <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" placeholder="Enter city">
+                          </div>
+                          <button type="button" id="add">Add</button>
+                        </div>
+                      </div>
+                    </div>
+                  
+                  
+                    
                     <div class="flex_wrap_box">
                       <div class="rectangle-1"></div>
                       <div class="tile-revised">
@@ -909,61 +911,57 @@
   // });
 
 
-  document.addEventListener("DOMContentLoaded", function() {
-    const filterAdd = document.querySelector('.filter_add');
-    const addMenu = document.querySelector('.workflow_add_menu');
-    const closeButton = addMenu.querySelector('.fa-xmark');
-
-    // Toggle visibility of the addMenu
-    filterAdd.addEventListener('click', function(event) {
-      event.stopPropagation();
-      addMenu.style.display = addMenu.style.display === 'none' || addMenu.style.display === '' ? 'block' : 'none';
-    });
-
-    // Close the addMenu when the close button is clicked
-    closeButton.addEventListener('click', function() {
-      addMenu.style.display = 'none';
-    });
-
-    // Close the addMenu when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!addMenu.contains(event.target) && !filterAdd.contains(event.target)) {
-        addMenu.style.display = 'none';
-      }
-    });
-  });
-
-
-  document.addEventListener("DOMContentLoaded", function() {
-    const filterAdd = document.querySelector('#skip');
-    const addMenu = document.querySelector('.add_menu');
-    const closeButton = addMenu.querySelector('.fa-xmark');
-    const workflowAddMenu = document.querySelector('.workflow_add_menu');  // Select the workflow_add_menu
-
-    // Toggle visibility of the addMenu
-    filterAdd.addEventListener('click', function(event) {
-      event.stopPropagation();
-      addMenu.style.display = addMenu.style.display === 'none' || addMenu.style.display === '' ? 'block' : 'none';
-      
-      // Hide .workflow_add_menu when #skip is clicked
-      workflowAddMenu.style.display = 'none';
-    });
-
-    // Close the addMenu when the close button is clicked
-    closeButton.addEventListener('click', function() {
-      addMenu.style.display = 'none';
-    });
-
-    // Close the addMenu when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!addMenu.contains(event.target) && !filterAdd.contains(event.target)) {
-        addMenu.style.display = 'none';
-      }
-    });
-});
-
-
+  
     
   </script>
+  <script>
+// Wait for the DOM content to fully load
+document.addEventListener('DOMContentLoaded', function () {
+
+// Handle the "Add Workflow" button click (filter_add)
+const filterAddButton = document.querySelector('.filter_add');
+if (filterAddButton) {
+  filterAddButton.addEventListener('click', function () {
+    const form = document.querySelector('#workflow_decribe');
+    
+    // Toggle the display property between 'none' and 'block'
+    if (form.style.display === 'none' || form.style.display === '') {
+      form.style.display = 'block';
+    } else {
+      form.style.display = 'none';
+    }
+  });
+} else {
+  console.error("Element .filter_add not found.");
+}
+
+// Handle the "Skip" button click
+const skipButton = document.querySelector('#skip');
+if (skipButton) {
+  skipButton.addEventListener('click', function () {
+    const workflowForm = document.querySelector('#workflow_decribe');
+    const addMenu = document.querySelector('.add_menu');
+    
+    // Hide the workflow form and show the Add Menu
+    workflowForm.style.display = 'none';
+    addMenu.style.display = 'block';
+  });
+} else {
+  console.error("Element #skip not found.");
+}
+
+// Handle closing the "Add Menu" when clicking on the close icon (xmark)
+const closeButton = document.querySelector('.fa-xmark');
+if (closeButton) {
+  closeButton.addEventListener('click', function () {
+    const addMenu = document.querySelector('.add_menu');
+    addMenu.style.display = 'none'; // Hide the Add Menu
+  });
+} else {
+  console.error("Element .fa-xmark not found.");
+}
+});
+
+</script>
   </body>
 </html>
