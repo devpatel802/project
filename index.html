@@ -16,7 +16,7 @@
 
   <body>
     <div class="dashboard-menu">
-      <header class="frame-wrapper" style="margin: 0px auto 30px 0px">
+      <header class="frame-wrapper" style="margin: 0px auto 60px 0px">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-6">
@@ -27,38 +27,40 @@
               <div id="hamburger-menu">
                 <div class="header_menu">
                   <ul>
-                    <li>User Settings</li>
+                    <!-- <li>User Settings</li> -->
+                     <li class="sub_menu_item">
+                      <p>Add</p>
+                        <div class="sub_menu_arrow">
+                          <div class="open_arrow">
+                            <img class="img" src="img/chevron-right-2.svg">
+                          </div>
+                          <div class="close_arrow">
+                            <img class="img" src="img/chevron-right.svg">
+                          </div>
+                        </div>
+                      <ul class="sub_menu">
+                        <li>User</li>
+                        <li>Property</li>
+                        <li>Portfolio</li>
+
+                      </ul>
+                    </li>
+                    <li class="sub_menu_item">
+                      <p>Settings</p>
+                        <div class="sub_menu_arrow">
+                          <div class="open_arrow">
+                            <img class="img" src="img/chevron-right-2.svg">
+                          </div>
+                          <div class="close_arrow">
+                            <img class="img" src="img/chevron-right.svg">
+                          </div>
+                        </div>
+                      <ul class="sub_menu">
+                        <li>User</li>
+                        <li>Portfolio</li>
+                      </ul>
+                    </li>
                     <!-- <li class="sub_menu_item">
-                      <p>Accounting</p>
-                        <div class="sub_menu_arrow">
-                          <div class="open_arrow">
-                            <img class="img" src="img/chevron-right-2.svg">
-                          </div>
-                          <div class="close_arrow">
-                            <img class="img" src="img/chevron-right.svg">
-                          </div>
-                        </div>
-                      <ul class="sub_menu">
-                        <li>Sub category 1</li>
-                        <li>Sub category 2</li>
-                      </ul>
-                    </li>
-                    <li class="sub_menu_item">
-                      <p>Property list</p>
-                        <div class="sub_menu_arrow">
-                          <div class="open_arrow">
-                            <img class="img" src="img/chevron-right-2.svg">
-                          </div>
-                          <div class="close_arrow">
-                            <img class="img" src="img/chevron-right.svg">
-                          </div>
-                        </div>
-                      <ul class="sub_menu">
-                        <li>Sub category 1</li>
-                        <li>Sub category 2</li>
-                      </ul>
-                    </li>
-                    <li class="sub_menu_item">
                       <p>Protfolio list</p>
                         <div class="sub_menu_arrow">
                           <div class="open_arrow">
@@ -73,7 +75,7 @@
                         <li>Sub category 2</li>
                       </ul>
                     </li>
-                    <li>Portfolio settings</li> -->
+                    <li>Portfolio settings</li>  -->
                   </ul>
                   <div class="graphs-wrapper"><div class="text-wrapper-5">Sign out</div></div>
                 </div>
@@ -83,7 +85,7 @@
         </div>
       </header>
 
-      <div class="breadcrumb_sec">
+      <div class="breadcrumb_sec" style="display: none;">
         <div class="container">
           <div class="row">
             <div class="col-md-6">
@@ -120,7 +122,7 @@
                         <div class="filter_open">
                           <img src="img/switch-vertical.svg">
                         </div>
-                        <div class="open_menu filter_menu" style="display: none;">
+                        <div class="open_menu filter_menu" style="margin-top: -2px;display: block;">
                           <div class="department_info">
                             <div class="menu_title">
                               <span><strong>Department</strong></span>
@@ -191,51 +193,53 @@
                           <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                       </div>
-                      <!-- Add Workflow to... -->
-                            <!-- Initially hidden form -->
-                            <form id="workflow_decribe" style="display: none;" class="workflow_add_menu filter_menu">
-                              <div class="menu_title">
-                                <span><strong>Add Workflow to..</strong></span>
-                                <!-- <i class="fa-solid fa-xmark"></i> -->
-                              </div>
-                              <textarea name="decribe-wordflow" rows="3" placeholder="2 line text box"></textarea>
-                              <button type="button" id="suggest_workflow">Suggest Workflow</button>
-                              <button type="button" id="skip">Skip</button>
-                            </form>
-                          <!-- Initially hidden Add Menu -->
-                            <div class="add_menu filter_menu" style="display: none;">
-                              <div class="menu_space">
-                                <div class="menu_title">
-                                  <span><strong>Add task</strong></span>
-                                  <i class="fa-solid fa-xmark"></i>
-                                </div>
-                                <div class="bg_white">
-                                  <p>Subway payment for the month has not been processed</p>
-                                </div>
-                                <div class="add_item_form">
-                                  <div class="form-group">
-                                    <label for="workflow">Workflow</label>
-                                    <input type="text" placeholder="Enter Workflow">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="date">Date</label>
-                                    <input type="text" placeholder="Enter date">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="location">Location</label>
-                                    <input type="text" placeholder="Enter city">
-                                  </div>
-                                  <button type="button" id="add">Add</button>
-                                </div>
-                              </div>
-                            </div>
-                        <!--  -->
                     </div>
+                    <!-- Add Workflow to... -->
+                      <!-- Initially hidden form -->
+                        <form id="workflow_decribe" style="display: none;" class="workflow_add_menu filter_menu">
+                          <div class="menu_title">
+                            <span><strong>Add Workflow to..</strong></span>
+                            <i class="fa-solid fa-xmark"></i>
+                          </div>
+                          <textarea name="decribe-wordflow" rows="3" placeholder="2 line text box"></textarea>
+                          <button type="button" id="suggest_workflow">Suggest Workflow</button>
+                          <button type="button" id="skip">Skip</button>
+                        </form>
+                      <!-- Initially hidden Add Menu -->
+                      <div class="add_menu filter_menu" style="display: none;">
+                        <div class="menu_space">
+                          <div class="menu_title">
+                            <span><strong>Add Workflow</strong></span>
+                            <i class="fa-solid fa-xmark"></i>
+                          </div>
+                          <div class="add_item_form">
+                            <div class="form-group">
+                              <label for="workflow">Workflow</label>
+                              <select name="Workflow" id="choose_workflow" aria-placeholder="Enter workflow">
+                                <option value="Workflow-1">Workflow-1</option>
+                                <option value="Workflow-2">Workflow-2</option>
+                                <option value="Workflow-3">Workflow-3</option>
+                                <option value="Workflow-4">Workflow-4</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="workflow">Workflow Title</label>
+                              <input type="text" placeholder="Workflow title here">
+                            </div>
+                            <div class="form-group">
+                              <label for="date">Unit</label>
+                              <input type="date" min="2024-01-01" max="2034-01-01" placeholder="Enter date">
+                            </div>
+                            <div class="form-group">
+                              <label for="location">Vendor</label>
+                              <input type="text" placeholder="Enter city">
+                            </div>
+                            <button type="button" id="add">Add</button>
+                          </div>
+                        </div>
+                      </div>
+                    <!--  -->
                   </div>
-
-                  
-
-
                   <div class="filter_search_box">
                     <form class="search-box">
                       <input type="search" name="focus" placeholder="Search" id="search-input" value="">
@@ -260,10 +264,10 @@
                       <div class="rectangle-2"></div>
                           <div class="tile-revised-2">
                             <div class="div-wrapper">
-                              <p class="text-wrapper-4">Future occupancy planning</p>
-                              <div class="div-3">Future planning (workflow title)</div>
+                              <p class="text-wrapper-4">Colors for department changed a bit.</p>
+                              <div class="div-3">Property (workflow title)</div>
                               <div class="frame-11">
-                                <div class="div-3">5 days ago (07/12/24)</div>
+                                <div class="div-3">06/05/23 -> 5 days ago</div>
                                 <div class="ellipse-2"></div>
                                 <div class="div-3">Seattle (unit)</div>
                               </div>
@@ -274,10 +278,10 @@
                       <div class="rectangle-3"></div>
                         <div class="tile-revised-2">
                           <div class="div-wrapper">
-                            <p class="text-wrapper-4">Returned payments</p>
-                            <div class="div-3">Payments (workflow title)</div>
+                            <p class="text-wrapper-4">40CHAR limit for title</p>
+                            <div class="div-3">Property (workflow title)</div>
                             <div class="frame-11">
-                              <div class="div-3">5 days ago (07/12/24)</div>
+                              <div class="div-3">06/05/23 -> 5 days ago</div>
                               <div class="ellipse-3"></div>
                               <div class="div-3">Seattle (unit)</div>
                             </div>
@@ -288,10 +292,10 @@
                       <div class="rectangle-4"></div>
                       <div class="tile-revised-2">
                         <div class="div-wrapper">
-                          <p class="text-wrapper-4">Future occupancy planning</p>
+                          <p class="text-wrapper-4">New activity in workflow makes title blue</p>
                           <div class="div-3">Future planning (workflow title)</div>
                           <div class="frame-11">
-                            <div class="div-3">5 days ago (07/12/24)</div>
+                            <div class="div-3">Creation date -> 5 days ago</div>
                             <div class="ellipse-4"></div>
                             <div class="div-3">Seattle (unit)</div>
                           </div>
@@ -302,10 +306,10 @@
                       <div class="rectangle-5"></div>
                       <div class="tile-revised-2">
                         <div class="div-wrapper">
-                          <p class="text-wrapper-4">[Maintenance title]</p>
-                          <div class="div-3">Tenant Maintenance (workflow title)</div>
+                          <p class="text-wrapper-4">40 Char length for Accounting users</p>
+                          <div class="div-3">Accounting (workflow title)</div>
                           <div class="frame-11">
-                            <div class="div-3">5 days ago (07/12/24)</div>
+                            <div class="div-3">06/05/23 -> Lase workflow update</div>
                             <div class="ellipse-5"></div>
                             <div class="div-3">Seattle (unit)</div>
                           </div>
@@ -316,12 +320,12 @@
                       <div class="rectangle-6"></div>
                       <div class="tile-revised-2">
                         <div class="div-wrapper">
-                          <p class="text-wrapper-4">Ceiling tile replacement after roof leak</p>
-                          <div class="div-3">Tenant Maintenance (workflow title)</div>
+                          <p class="text-wrapper-4">40ACHARFGHIJKLMNOPQRSTUVWZYZ1234561067..</p>
+                          <div class="div-3">Accounting (workflow title)</div>
                           <div class="frame-11">
-                            <div class="div-3">5 days ago (07/12/24)</div>
+                            <div class="div-3">06/05/23 -> 5 days ago</div>
                             <div class="ellipse-6"></div>
-                            <div class="div-3">Seattle (unit)</div>
+                            <div class="div-3">Property City (unit)</div>
                           </div>                        
                         </div>
                       </div>
@@ -330,10 +334,10 @@
                       <div class="rectangle-7"></div>
                       <div class="tile-revised-2">
                         <div class="div-wrapper">
-                          <p class="text-wrapper-4">[Maintenance title]</p>
-                          <div class="div-3">Tenant Maintenance (workflow title)</div>
+                          <p class="text-wrapper-4">40 Char length for Lease users...</p>
+                          <div class="div-3">Lease (workflow title)</div>
                           <div class="frame-11">
-                            <div class="div-3">5 days ago (07/12/24)</div>
+                            <div class="div-3">06/05/23 -> 5 days ago</div>
                             <div class="ellipse-7"></div>
                             <div class="div-3">Seattle (unit)</div>
                           </div>                        
@@ -344,10 +348,10 @@
                       <div class="rectangle-8"></div>
                       <div class="tile-revised-2">
                         <div class="div-wrapper">
-                          <p class="text-wrapper-4">Returned payments</p>
-                          <div class="div-3">Payments (workflow title)</div>
+                          <p class="text-wrapper-4">40CHAR Closed workflow </p>
+                          <div class="div-3">Maintenance (workflow title)</div>
                           <div class="frame-11">
-                            <div class="div-3">5 days ago (07/12/24)</div>
+                            <div class="div-3">06/05/23 -> 06/28/23</div>
                             <div class="ellipse-8"></div>
                             <div class="div-3">Seattle (unit)</div>
                           </div>
@@ -358,12 +362,12 @@
                       <div class="rectangle-9"></div>
                       <div class="tile-revised-2">
                         <div class="div-wrapper">
-                          <p class="text-wrapper-4">Returned payments</p>
-                          <div class="div-3">Payments (workflow title)</div>
+                          <p class="text-wrapper-4">40CHARFGHIJKLMNOPQRSTUVWZYZ1234567890..</p>
+                          <div class="div-3">Lease (workflow title)</div>
                           <div class="frame-11">
-                            <div class="div-3">5 days ago (07/12/24)</div>
+                            <div class="div-3">06/05/23 -> 55 days ago</div>
                             <div class="ellipse-9"></div>
-                            <div class="div-3">Seattle (unit)</div>
+                            <div class="div-3">12345678911..(ABCD5..)</div>
                           </div>
                         </div>
                       </div>
@@ -961,5 +965,18 @@ if (closeButton) {
 });
 
 </script>
+<script>
+  document.querySelector('.fa-xmark').addEventListener('click', function() {
+    document.getElementById('workflow_decribe').style.display = 'none';
+  });
+</script>
+<script>
+  document.querySelectorAll('.fa-xmark').forEach(function(icon) {
+    icon.addEventListener('click', function() {
+      document.querySelector('.add_menu.filter_menu').style.display = 'none';
+    });
+  });
+</script>
+
   </body>
 </html>
