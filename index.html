@@ -1028,10 +1028,30 @@ document.addEventListener('DOMContentLoaded', function () {
  <!--  THIS IS FOR Add AND Setting -->
 
  <script>
- 
- // Wait for the DOM content to fully load
-document.addEventListener('DOMContentLoaded', function () {
-  
+  document.addEventListener('DOMContentLoaded', function () {
+  const skipButton = document.querySelector('#skip');
+  const workflowForm = document.querySelector('#workflow_decribe');
+  const addMenu = document.querySelector('.add_menu');
+  const menuItems = document.querySelectorAll('.sub_menu_item');
+
+  // Function to toggle visibility of workflow form and Add Menu
+  function toggleSkipButtonAction() {
+    if (workflowForm.style.display === 'none') {
+      workflowForm.style.display = 'block';
+      addMenu.style.display = 'none';
+    } else {
+      workflowForm.style.display = 'none';
+      addMenu.style.display = 'block';
+    }
+  }
+
+  // Function to close all open elements
+  function closeAll() {
+    workflowForm.style.display = 'none';
+    addMenu.style.display = 'none';
+    collapseAllSubMenus();
+  }
+
   // Function to collapse all submenus
   function collapseAllSubMenus() {
     const subMenus = document.querySelectorAll('.sub_menu');
@@ -1077,16 +1097,47 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Attach click handlers to all menu items with the class .sub_menu_item
-  const menuItems = document.querySelectorAll('.sub_menu_item');
-  menuItems.forEach(item => {
-    item.addEventListener('click', function () {
-      toggleSubMenu(item);
+  // Event listener for the skip button
+  if (skipButton) {
+    skipButton.addEventListener('click', function (event) {
+      toggleSkipButtonAction();
+      event.stopPropagation(); // Prevent click from bubbling to document
     });
+  } else {
+    console.error("Element #skip not found.");
+  }
+
+  // Attach click handlers to all menu items with the class .sub_menu_item
+  menuItems.forEach(item => {
+    item.addEventListener('click', function (event) {
+      toggleSubMenu(item);
+      event.stopPropagation(); // Prevent click from propagating to document
+    });
+  });
+
+  // Close all elements when clicking outside
+  document.addEventListener('click', function (event) {
+    const clickedInside = event.target.closest('.sub_menu_item') || event.target.closest('#skip') || event.target.closest('#workflow_decribe') || event.target.closest('.add_menu');
+    if (!clickedInside) {
+      closeAll();
+    }
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const closeIcon = document.querySelector('.fa-solid.fa-xmark'); // Select the close icon
+  const addMenu = document.querySelector('.add_menu.filter_menu'); // Select the target div
+
+  if (closeIcon && addMenu) {
+    closeIcon.addEventListener('click', function () {
+      addMenu.style.display = 'none'; // Hide the div
+    });
+  } else {
+    console.error("Close icon or target div not found.");
+  }
+});
 
  </script>
+  
   </body>
 </html>
