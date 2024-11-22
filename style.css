@@ -102,6 +102,16 @@ header.frame-wrapper .row .text-right {text-align: right;position: relative;}
 .department_info input:checked:after {transform: scale(.7);}
 .department_info input:checked {border-color: #000;}
 
+.sub_menu_item > p {
+  font-weight: normal;
+  transition: font-weight 0.3s ease;
+}
+
+.sub_menu_item > p.bold {
+  font-weight: bold;
+}
+
+
 /* .dashboard-menu .top_features .filter_icon .filter_open .filter_menu .department_info label {position: relative;cursor: pointer;} */
 /* .dashboard-menu .top_features .filter_icon .filter_open .filter_menu .department_info .form-group input {padding: 0;height: initial;width: initial;margin-bottom: 0;display: none;cursor: pointer;} */
 /* .dashboard-menu .top_features .filter_icon .filter_open .filter_menu .department_info label:before {content: '';-webkit-appearance: none;background-color: transparent;border: 2px solid #0079bf;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);padding: 10px;display: inline-block;position: relative;vertical-align: middle;cursor: pointer;margin-right: 5px;} */
