@@ -30,37 +30,38 @@
                   
                   <ul class="menu">
                     <li class="sub_menu_item show">
-                      <p>Add</p>
-                      <div class="sub_menu_arrow">
-                        <div class="open_arrow" style="display: none;">
-                          <img class="img" src="img/chevron-right-2.svg">
+                        <p>Add</p>
+                        <div class="sub_menu_arrow">
+                            <div class="open_arrow" style="display: none;">
+                                <img class="img" src="img/chevron-right.svg">
+                            </div>
+                            <div class="close_arrow" style="display: block;">
+                                <img class="img" src="img/chevron-right-2.svg">
+                            </div>
                         </div>
-                        <div class="close_arrow" style="display: block;">
-                          <img class="img" src="img/chevron-right.svg">
-                        </div>
-                      </div>
-                      <ul class="sub_menu" style="display: block;">
-                        <li>User</li>
-                        <li>Property</li>
-                        <li>Portfolio</li>
-                      </ul>
+                        <ul class="sub_menu" style="display: block;">
+                            <li>User</li>
+                            <li>Property</li>
+                            <li>Portfolio</li>
+                        </ul>
                     </li>
                     <li class="sub_menu_item">
-                      <p>Settings</p>
-                      <div class="sub_menu_arrow">
-                        <div class="open_arrow" style="display: none;">
-                          <img class="img" src="img/chevron-right.svg">
+                        <p>Settings</p>
+                        <div class="sub_menu_arrow">
+                            <div class="open_arrow" style="display: none;">
+                                <img class="img" src="img/chevron-right.svg">
+                            </div>
+                            <div class="close_arrow" style="display: block;">
+                                <img class="img" src="img/chevron-right-2.svg">
+                            </div>
                         </div>
-                        <div class="close_arrow" style="display: block;">
-                          <img class="img" src="img/chevron-right-2.svg">
-                        </div>
-                      </div>
-                      <ul class="sub_menu" style="display: none;">
-                        <li>User</li>
-                        <li>Portfolio</li>
-                      </ul>
+                        <ul class="sub_menu" style="display: none;">
+                            <li>User</li>
+                            <li>Portfolio</li>
+                        </ul>
                     </li>
-                  </ul>
+                </ul>
+                
                   
                     
                     <!-- <li class="sub_menu_item">
@@ -1022,101 +1023,60 @@
  <!--  THIS IS FOR Add AND Setting -->
 
  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-  const skipButton = document.querySelector('#skip');
-  const workflowForm = document.querySelector('#workflow_decribe');
-  const addMenu = document.querySelector('.add_menu');
-  const menuItems = document.querySelectorAll('.sub_menu_item');
+ // Function to collapse all submenus
+function collapseAllSubMenus() {
+  const subMenus = document.querySelectorAll('.sub_menu');
+  const arrows = document.querySelectorAll('.sub_menu_arrow .open_arrow, .sub_menu_arrow .close_arrow');
+  const menuTexts = document.querySelectorAll('.sub_menu_item > p');
 
-  // Function to toggle visibility of workflow form and Add Menu
-  function toggleSkipButtonAction() {
-    if (workflowForm.style.display === 'none') {
-      workflowForm.style.display = 'block';
-      addMenu.style.display = 'none';
+  // Hide all submenus and reset text styles
+  subMenus.forEach(menu => menu.style.display = 'none');
+  menuTexts.forEach(text => text.style.fontWeight = 'normal');
+
+  // Reset all arrows to their default state (close arrow visible)
+  arrows.forEach(arrow => {
+    if (arrow.classList.contains('open_arrow')) {
+      arrow.style.display = 'none'; // Hide open arrow
     } else {
-      workflowForm.style.display = 'none';
-      addMenu.style.display = 'block';
+      arrow.style.display = 'block'; // Show close arrow
     }
-  }
-
-  // Function to close all open elements
-  function closeAll() {
-    workflowForm.style.display = 'none';
-    addMenu.style.display = 'none';
-    collapseAllSubMenus();
-  }
-
-  // Function to collapse all submenus
-  function collapseAllSubMenus() {
-    const subMenus = document.querySelectorAll('.sub_menu');
-    const arrows = document.querySelectorAll('.sub_menu_arrow .open_arrow, .sub_menu_arrow .close_arrow');
-    const menuTexts = document.querySelectorAll('.sub_menu_item > p');
-
-    // Hide all submenus and reset text styles
-    subMenus.forEach(menu => menu.style.display = 'none');
-    menuTexts.forEach(text => text.style.fontWeight = 'normal');
-
-    // Ensure all arrows are reset
-    arrows.forEach(arrow => {
-      if (arrow.classList.contains('open_arrow')) {
-        arrow.style.display = 'none'; // Hide open arrow
-      } else {
-        arrow.style.display = 'block'; // Show close arrow
-      }
-    });
-  }
-
-  // Function to toggle a specific submenu
-  function toggleSubMenu(parentItem) {
-    const subMenu = parentItem.querySelector('.sub_menu');
-    const openArrow = parentItem.querySelector('.open_arrow');
-    const closeArrow = parentItem.querySelector('.close_arrow');
-    const menuText = parentItem.querySelector('p');
-
-    if (subMenu) {
-      if (subMenu.style.display === 'block') {
-        // Collapse the submenu
-        subMenu.style.display = 'none';
-        openArrow.style.display = 'none'; // Hide open arrow
-        closeArrow.style.display = 'block'; // Show close arrow
-        menuText.style.fontWeight = 'normal'; // Normal font
-      } else {
-        // Collapse others and expand this one
-        collapseAllSubMenus();
-        subMenu.style.display = 'block';
-        openArrow.style.display = 'block'; // Show open arrow
-        closeArrow.style.display = 'none'; // Hide close arrow
-        menuText.style.fontWeight = 'bold'; // Bold font
-      }
-    }
-  }
-
-  // Event listener for the skip button
-  if (skipButton) {
-    skipButton.addEventListener('click', function (event) {
-      toggleSkipButtonAction();
-      event.stopPropagation(); // Prevent click from bubbling to document
-    });
-  } else {
-    console.error("Element #skip not found.");
-  }
-
-  // Attach click handlers to all menu items with the class .sub_menu_item
-  menuItems.forEach(item => {
-    item.addEventListener('click', function (event) {
-      toggleSubMenu(item);
-      event.stopPropagation(); // Prevent click from propagating to document
-    });
   });
+}
 
-  // Close all elements when clicking outside
-  document.addEventListener('click', function (event) {
-    const clickedInside = event.target.closest('.sub_menu_item') || event.target.closest('#skip') || event.target.closest('#workflow_decribe') || event.target.closest('.add_menu');
-    if (!clickedInside) {
-      closeAll();
+// Function to toggle a specific submenu
+function toggleSubMenu(parentItem) {
+  const subMenu = parentItem.querySelector('.sub_menu');
+  const openArrow = parentItem.querySelector('.open_arrow');
+  const closeArrow = parentItem.querySelector('.close_arrow');
+  const menuText = parentItem.querySelector('p');
+
+  // Collapse or expand this submenu
+  if (subMenu) {
+    if (subMenu.style.display === 'block') {
+      // Collapse the submenu
+      subMenu.style.display = 'none';
+      openArrow.style.display = 'none'; // Hide open arrow
+      closeArrow.style.display = 'block'; // Show close arrow
+      menuText.style.fontWeight = 'normal'; // Normal font weight
+    } else {
+      // Collapse all other submenus and expand this one
+      collapseAllSubMenus();
+      subMenu.style.display = 'block';
+      openArrow.style.display = 'none'; // Hide open arrow
+      closeArrow.style.display = 'none'; // Hide close arrow
+      menuText.style.fontWeight = 'bold'; // Bold font weight
     }
+  }
+}
+
+// Add an event listener to both menu items to toggle the submenus
+document.querySelectorAll('.sub_menu_item').forEach(item => {
+  item.addEventListener('click', function () {
+    toggleSubMenu(item);
   });
 });
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
   // Select the close button and the form container
@@ -1149,7 +1109,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
- </scr>
+ </script>
   
   </body>
 </html>
