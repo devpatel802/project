@@ -798,21 +798,7 @@
 });
   </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $(".sub_menu_item").on("click", function(event) {
-          // Toggle the show class on the clicked element
-          $(this).toggleClass("show");
-          // Stop the click event from propagating to the document
-          event.stopPropagation();
-      });
-
-      // When clicking anywhere else on the document, remove the show class
-      $(document).on("click", function() {
-          $(".sub_menu_item").removeClass("show");
-      });
-    });
-  </script>
+  
   <script>
     // Show the first tab and hide the rest
     $('#graph-nav li:first-child').addClass('active');
