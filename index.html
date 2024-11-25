@@ -17,7 +17,7 @@
   
   <body>
     <div class="dashboard-menu">
-      <header class="frame-wrapper">
+      <header class="frame-wrapper" style="margin: 0px auto 60px 0px">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-6">
@@ -27,41 +27,39 @@
               <button class="hamburger-button" onclick="toggleMenu()" aria-label="Open Menu"><img class="hamburger-icon" src="img/menu.svg" alt="Menu" /></button>
               <div id="hamburger-menu">
                 <div class="header_menu">
-                  
                   <ul class="menu">
                     <li class="sub_menu_item show">
-                        <p>Add</p>
-                        <div class="sub_menu_arrow">
-                            <div class="open_arrow" style="display: none;">
-                                <img class="img" src="img/chevron-right.svg">
-                            </div>
-                            <div class="close_arrow" style="display: block;">
-                                <img class="img" src="img/chevron-right-2.svg">
-                            </div>
+                      <p>Add</p>
+                      <div class="sub_menu_arrow">
+                        <div class="open_arrow" style="display: none;">
+                          <img class="img" src="img/chevron-right.svg">
                         </div>
-                        <ul class="sub_menu" style="display: block;">
-                            <li>User</li>
-                            <li>Property</li>
-                            <li>Portfolio</li>
-                        </ul>
+                        <div class="close_arrow" style="display: block;">
+                          <img class="img" src="img/chevron-right-2.svg">
+                        </div>
+                      </div>
+                      <ul class="sub_menu" style="display: block;">
+                        <li>User</li>
+                        <li>Property</li>
+                        <li>Portfolio</li>
+                      </ul>
                     </li>
                     <li class="sub_menu_item">
-                        <p>Settings</p>
-                        <div class="sub_menu_arrow">
-                            <div class="open_arrow" style="display: none;">
-                                <img class="img" src="img/chevron-right.svg">
-                            </div>
-                            <div class="close_arrow" style="display: block;">
-                                <img class="img" src="img/chevron-right-2.svg">
-                            </div>
+                      <p>Settings</p>
+                      <div class="sub_menu_arrow">
+                        <div class="open_arrow" style="display: none;">
+                          <img class="img" src="img/chevron-right.svg">
                         </div>
-                        <ul class="sub_menu" style="display: none;">
-                            <li>User</li>
-                            <li>Portfolio</li>
-                        </ul>
+                        <div class="close_arrow" style="display: block;">
+                          <img class="img" src="img/chevron-right-2.svg">
+                        </div>
+                      </div>
+                      <ul class="sub_menu" style="display: none;">
+                        <li>User</li>
+                        <li>Portfolio</li>
+                      </ul>
                     </li>
-                </ul>
-                
+                  </ul>
                   
                     
                     <!-- <li class="sub_menu_item">
@@ -154,7 +152,7 @@
                           <div class="workflow_status">
                             <div class="menu_title">
                               <span><strong>Workflow status</strong></span>
-                              <p><a href="">View all</a></p>
+                              <p style="display: none;"><a href="">View all</a></p>
                             </div>
                             <label class="form-group">
                               <input type="checkbox" name="workflow-status" value="opentasks" id="open_tasks" onclick="handleCheckboxClick(this)">Open tasks
@@ -166,7 +164,7 @@
                           <div class="sort_order">
                             <div class="menu_title">
                               <span><strong>Sort oder</strong></span>
-                              <p><a href="">View all</a></p>
+                              <p style="display: none;"><a href="">View all</a></p>
                             </div>
                             <label class="form-group">
                               <input type="checkbox" name="sort-order" value="recenttop" id="recent_top" onclick="handleCheckboxClick(this)">Recent on top
@@ -190,17 +188,17 @@
                     </div>
                     <!-- Add Workflow to... -->
                       <!-- Initially hidden form -->
-                      <form id="workflow_decribe" class="workflow_add_menu filter_menu">
-                        <div class="menu_title">
-                          <span><strong>Add Workflow to...</strong></span>
-                          <img class="close_form_btn" src="img/x.svg" alt="Close">
-                        </div>
-                        <textarea name="decribe-wordflow" rows="3" placeholder="2 line text box"></textarea>
-                        <button type="button" id="suggest_workflow">Suggest workflow</button>
-                        <button type="button" id="skip" style="background-color: #f2f2f2;">Skip</button>
-                      </form>                      
+                        <form id="workflow_decribe" class="workflow_add_menu filter_menu">
+                          <div class="menu_title">
+                            <span><strong>Add Workflow to...</strong></span>
+                            <img class="close_form_btn" src="img/x.svg" alt="close">
+                          </div>
+                          <textarea name="decribe-wordflow" rows="3" placeholder="2 line text box"></textarea>
+                          <button type="button" id="suggest_workflow">Suggest workflow</button>
+                          <button type="button" id="skip" style="background-color: #f2f2f2;">Skip</button>
+                        </form>
                       <!-- Initially hidden Add Menu -->
-                      <div class="add_menu filter_menu" id="workflow_decribe_after_skip" style="display: none;" >
+                      <div class="add_menu filter_menu" id="workflow_decribe_after_skip">
                         <div class="menu_space">
                           <div class="menu_title">
                             <span><strong>Add Workflow</strong></span>
@@ -932,175 +930,173 @@
 
   <!--  THIS IS FOR Department AND Add Workflow to.. -->
 
-  <script>
-    // Wait for the DOM content to fully load
-   document.addEventListener('DOMContentLoaded', function () {
-     
-     // Function to hide all menus and reset button styles
-     function hideAllMenusAndResetStyles() {
-       const openMenu = document.querySelector('.open_menu.filter_menu');
-       const workflowForm = document.querySelector('#workflow_decribe');
-       const workflowDecribeAfterSkip = document.querySelector('#workflow_decribe_after_skip');
-       const filterOpenButton = document.querySelector('.filter_open');
-       const filterAddButton = document.querySelector('.filter_add');
-       
-       
-       if (openMenu) openMenu.style.display = 'none';
-       if (workflowForm) workflowForm.style.display = 'none';
-       if (workflowDecribeAfterSkip) workflowDecribeAfterSkip.style.display = 'none';
-       
-       // Reset background colors
-       if (filterOpenButton) filterOpenButton.style.backgroundColor = '';
-       if (filterAddButton) filterAddButton.style.backgroundColor = '';
-       
-     }
-   
-     // Handle the "Filter Open" button click
-     const filterOpenButton = document.querySelector('.filter_open');
-     if (filterOpenButton) {
-       filterOpenButton.addEventListener('click', function (event) {
-         const openMenu = document.querySelector('.open_menu.filter_menu');
-         
-         // Prevent hiding when clicking the button itself
-         event.stopPropagation();
-   
-         // Hide all menus and reset styles before toggling
-         hideAllMenusAndResetStyles();
-   
-         // Set background color for this button
-         filterOpenButton.style.backgroundColor = '#F2F2F2';
-   
-         // Toggle the filter menu
-         if (openMenu && (openMenu.style.display === 'none' || openMenu.style.display === '')) {
-           openMenu.style.display = 'block';
-         }
-       });
-     } else {
-       console.error("Element .filter_open not found.");
-     }
-   
-     // Handle the "Add Workflow" button click
-     const filterAddButton = document.querySelector('.filter_add');
-     if (filterAddButton) {
-       filterAddButton.addEventListener('click', function (event) {
-         const workflowForm = document.querySelector('#workflow_decribe');
-         const workflowDecribeAfterSkip = document.querySelector('#workflow_decribe_after_skip');
-         
-         // Prevent hiding when clicking the button itself
-         event.stopPropagation();
-   
-         // Hide all menus and reset styles before toggling
-         hideAllMenusAndResetStyles();
-   
-         // Set background color for this button
-         filterAddButton.style.backgroundColor = '#F2F2F2';
-   
-         // Toggle the workflow form
-         if (workflowForm && (workflowForm.style.display === 'none' || workflowForm.style.display === '')) {
-           workflowForm.style.display = 'block';
-         }
-       });
-     } else {
-       console.error("Element .filter_add not found.");
-     }
-   
-     // Close menus when clicking outside the designated areas
-     document.addEventListener('click', function () {
-       hideAllMenusAndResetStyles();
-     });
-   
-     // Prevent the document click handler from closing the menu when clicking inside the menu areas
-     const menuAreas = document.querySelectorAll('.open_menu.filter_menu, #workflow_decribe');
-     menuAreas.forEach(menu => {
-       menu.addEventListener('click', function (event) {
-         event.stopPropagation();
-       });
-     });
-   });
-    </script>
- 
-
- <!--  THIS IS FOR Add AND Setting -->
-
  <script>
- // Function to collapse all submenus
-function collapseAllSubMenus() {
-  const subMenus = document.querySelectorAll('.sub_menu');
-  const arrows = document.querySelectorAll('.sub_menu_arrow .open_arrow, .sub_menu_arrow .close_arrow');
-  const menuTexts = document.querySelectorAll('.sub_menu_item > p');
-
-  // Hide all submenus and reset text styles
-  subMenus.forEach(menu => menu.style.display = 'none');
-  menuTexts.forEach(text => text.style.fontWeight = 'normal');
-
-  // Reset all arrows to their default state (close arrow visible)
-  arrows.forEach(arrow => {
-    if (arrow.classList.contains('open_arrow')) {
-      arrow.style.display = 'none'; // Hide open arrow
-    } else {
-      arrow.style.display = 'block'; // Show close arrow
-    }
-  });
-}
-
-// Function to toggle a specific submenu
-function toggleSubMenu(parentItem) {
-  const subMenu = parentItem.querySelector('.sub_menu');
-  const openArrow = parentItem.querySelector('.open_arrow');
-  const closeArrow = parentItem.querySelector('.close_arrow');
-  const menuText = parentItem.querySelector('p');
-
-  // Collapse or expand this submenu
-  if (subMenu) {
-    if (subMenu.style.display === 'block') {
-      // Collapse the submenu
-      subMenu.style.display = 'none';
-      openArrow.style.display = 'none'; // Hide open arrow
-      closeArrow.style.display = 'block'; // Show close arrow
-      menuText.style.fontWeight = 'normal'; // Normal font weight
-    } else {
-      // Collapse all other submenus and expand this one
-      collapseAllSubMenus();
-      subMenu.style.display = 'block';
-      openArrow.style.display = 'none'; // Hide open arrow
-      closeArrow.style.display = 'none'; // Hide close arrow
-      menuText.style.fontWeight = 'bold'; // Bold font weight
-    }
-  }
-}
-
-// Add an event listener to both menu items to toggle the submenus
-document.querySelectorAll('.sub_menu_item').forEach(item => {
-  item.addEventListener('click', function () {
-    toggleSubMenu(item);
-  });
-});
-
-
-
+ // Wait for the DOM content to fully load
 document.addEventListener('DOMContentLoaded', function () {
-  // Select the close button and the form container
-  const closeFormBtn = document.querySelector('.close_form_btn');
-  const addMenu = document.querySelector('.workflow_add_menu.filter_menu');
+  
+  // Function to hide all menus and reset button styles
+  function hideAllMenusAndResetStyles() {
+    const openMenu = document.querySelector('.open_menu.filter_menu');
+    const workflowForm = document.querySelector('#workflow_decribe');
+    const workflowDecribeAfterSkip = document.querySelector('#workflow_decribe_after_skip');
+    const filterOpenButton = document.querySelector('.filter_open');
+    const filterAddButton = document.querySelector('.filter_add');
+    
+    if (openMenu) openMenu.style.display = 'none';
+    if (workflowForm) workflowForm.style.display = 'none';
+    if (workflowDecribeAfterSkip) workflowDecribeAfterSkip.style.display = 'none';
+    
+    // Reset background colors
+    if (filterOpenButton) filterOpenButton.style.backgroundColor = '';
+    if (filterAddButton) filterAddButton.style.backgroundColor = '';
+  }
 
-  // Log to make sure the elements are correctly selected
-  console.log(closeFormBtn, addMenu);
+  // Handle the "Filter Open" button click
+  const filterOpenButton = document.querySelector('.filter_open');
+  if (filterOpenButton) {
+    filterOpenButton.addEventListener('click', function (event) {
+      const openMenu = document.querySelector('.open_menu.filter_menu');
+      
+      // Prevent hiding when clicking the button itself
+      event.stopPropagation();
 
-  if (closeFormBtn && addMenu) {
-    // Add a click event listener to the close button
-    closeFormBtn.addEventListener('click', function () {
-      console.log('Close button clicked');
-      addMenu.style.display = 'none';  // Hide the form when clicked
+      // Hide all menus and reset styles before toggling
+      hideAllMenusAndResetStyles();
+
+      // Set background color for this button
+      filterOpenButton.style.backgroundColor = '#F2F2F2';
+
+      // Toggle the filter menu
+      if (openMenu && (openMenu.style.display === 'none' || openMenu.style.display === '')) {
+        openMenu.style.display = 'block';
+      }
     });
   } else {
-    console.error("Close button or form not found.");
+    console.error("Element .filter_open not found.");
   }
+
+  // Handle the "Add Workflow" button click
+  const filterAddButton = document.querySelector('.filter_add');
+  if (filterAddButton) {
+    filterAddButton.addEventListener('click', function (event) {
+      const workflowForm = document.querySelector('#workflow_decribe');
+      const workflowDecribeAfterSkip = document.querySelector('#workflow_decribe_after_skip');
+      
+      // Prevent hiding when clicking the button itself
+      event.stopPropagation();
+
+      // Hide all menus and reset styles before toggling
+      hideAllMenusAndResetStyles();
+
+      // Set background color for this button
+      filterAddButton.style.backgroundColor = '#F2F2F2';
+
+      // Toggle the workflow form
+      if (workflowForm && (workflowForm.style.display === 'none' || workflowForm.style.display === '')) {
+        workflowForm.style.display = 'block';
+        
+      }
+    });
+  } else {
+    console.error("Element .filter_add not found.");
+  }
+
+  // Close menus when clicking outside the designated areas
+  document.addEventListener('click', function () {
+    hideAllMenusAndResetStyles();
+  });
+
+  // Prevent the document click handler from closing the menu when clicking inside the menu areas
+  const menuAreas = document.querySelectorAll('.open_menu.filter_menu, #workflow_decribe');
+  menuAreas.forEach(menu => {
+    menu.addEventListener('click', function (event) {
+      event.stopPropagation();
+    });
+  });
 });
 
+  document.addEventListener('DOMContentLoaded', function () {
+  const skipButton = document.querySelector('#skip');
+  const workflowForm = document.querySelector('#workflow_decribe');
+  const addMenu = document.querySelector('.add_menu');
+  const menuItems = document.querySelectorAll('.sub_menu_item');
+
+  // Function to toggle visibility of workflow form and Add Menu
+  function toggleSkipButtonAction() {
+    if (workflowForm.style.display === 'none') {
+      workflowForm.style.display = 'block';
+      addMenu.style.display = 'none';
+    } else {
+      workflowForm.style.display = 'none';
+      addMenu.style.display = 'block';
+    }
+  }
+
+  // Function to close all open elements
+  function closeAll() {
+    workflowForm.style.display = 'none';
+    addMenu.style.display = 'none';
+    collapseAllSubMenus();
+  }
+
+  // Event listener for the skip button
+  if (skipButton) {
+    skipButton.addEventListener('click', function (event) {
+      toggleSkipButtonAction();
+      event.stopPropagation(); // Prevent click from bubbling to document
+    });
+  } else {
+    console.error("Element #skip not found.");
+  }
+
+  // Attach click handlers to all menu items with the class .sub_menu_item
+  menuItems.forEach(item => {
+    item.addEventListener('click', function (event) {
+      toggleSubMenu(item);
+      event.stopPropagation(); // Prevent click from propagating to document
+    });
+  });
+
+  // Close all elements when clicking outside
+  document.addEventListener('click', function (event) {
+    const clickedInside = event.target.closest('.sub_menu_item') || event.target.closest('#skip') || event.target.closest('#workflow_decribe') || event.target.closest('.add_menu');
+    if (!clickedInside) {
+      closeAll();
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const closeIcon = document.querySelector('.close_workflow_btn'); // Select the close icon
+  const addMenu = document.querySelector('.add_menu.filter_menu'); // Select the target div
+
+  if (closeIcon && addMenu) {
+    closeIcon.addEventListener('click', function () {
+      addMenu.style.display = 'none'; // Hide the div
+    });
+  } else {
+    console.error("Close icon or target div not found.");
+  }
+});
 
  </script>
 
- <script>
+
+
+
+<script>
+  // Select the close button
+const closeButton = document.querySelector('.close_form_btn');
+
+// Add a click event listener to the close button
+closeButton.addEventListener('click', function () {
+  // Find the form element to hide
+  const formElement = document.getElementById('workflow_decribe');
+  if (formElement) {
+    formElement.style.display = 'none'; // Hide the form
+  }
+});
+
   function handleCheckboxClick(clickedCheckbox) {
     const checkboxes = document.querySelectorAll(`input[name="${clickedCheckbox.name}"]`);
     checkboxes.forEach(checkbox => {
@@ -1111,5 +1107,53 @@ document.addEventListener('DOMContentLoaded', function () {
   }
  </script>
   
+<!--  THIS IS FOR Add AND Setting -->
+  <script>
+
+       // Function to collapse all submenus
+    function collapseAllSubMenus() {
+    const subMenus = document.querySelectorAll('.sub_menu');
+    const arrows = document.querySelectorAll('.sub_menu_arrow .open_arrow, .sub_menu_arrow .close_arrow');
+    const menuTexts = document.querySelectorAll('.sub_menu_item > p');
+
+    // Hide all submenus and reset text styles
+    subMenus.forEach(menu => menu.style.display = 'none');
+    menuTexts.forEach(text => text.style.fontWeight = 'normal');
+
+    // Ensure all arrows are reset
+    arrows.forEach(arrow => {
+      if (arrow.classList.contains('open_arrow')) {
+        arrow.style.display = 'none'; // Hide open arrow
+      } else {
+        arrow.style.display = 'block'; // Show close arrow
+      }
+    });
+  }
+
+  // Function to toggle a specific submenu
+  function toggleSubMenu(parentItem) {
+    const subMenu = parentItem.querySelector('.sub_menu');
+    const openArrow = parentItem.querySelector('.open_arrow');
+    const closeArrow = parentItem.querySelector('.close_arrow');
+    const menuText = parentItem.querySelector('p');
+
+    if (subMenu) {
+      if (subMenu.style.display === 'block') {
+        // Collapse the submenu
+        subMenu.style.display = 'none';
+        openArrow.style.display = 'none'; // Hide open arrow
+        closeArrow.style.display = 'block'; // Show close arrow
+        menuText.style.fontWeight = 'normal'; // Normal font
+      } else {
+        // Collapse others and expand this one
+        collapseAllSubMenus();
+        subMenu.style.display = 'block';
+        openArrow.style.display = 'block'; // Show open arrow
+        closeArrow.style.display = 'none'; // Hide close arrow
+        menuText.style.fontWeight = 'bold'; // Bold font
+      }
+    }
+  }
+     </script>
   </body>
 </html>
