@@ -17,7 +17,7 @@
   
   <body>
     <div class="dashboard-menu">
-      <header class="frame-wrapper" style="margin: 0px auto 60px 0px">
+      <header class="frame-wrapper">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-6">
@@ -189,17 +189,17 @@
                     </div>
                     <!-- Add Workflow to... -->
                       <!-- Initially hidden form -->
-                        <form id="workflow_decribe" class="workflow_add_menu filter_menu">
-                          <div class="menu_title">
-                            <span><strong>Add Workflow to...</strong></span>
-                            <img class="close_form_btn" src="img/x.svg">
-                          </div>
-                          <textarea name="decribe-wordflow" rows="3" placeholder="2 line text box"></textarea>
-                          <button type="button" id="suggest_workflow">Suggest workflow</button>
-                          <button type="button" id="skip" style="background-color: #f2f2f2;">Skip</button>
-                        </form>
+                      <form id="workflow_decribe" class="workflow_add_menu filter_menu">
+                        <div class="menu_title">
+                          <span><strong>Add Workflow to...</strong></span>
+                          <img class="close_form_btn" src="img/x.svg" alt="Close">
+                        </div>
+                        <textarea name="decribe-wordflow" rows="3" placeholder="2 line text box"></textarea>
+                        <button type="button" id="suggest_workflow">Suggest workflow</button>
+                        <button type="button" id="skip" style="background-color: #f2f2f2;">Skip</button>
+                      </form>                      
                       <!-- Initially hidden Add Menu -->
-                      <div class="add_menu filter_menu">
+                      <div class="add_menu filter_menu" id="workflow_decribe_after_skip" style="display: none;" >
                         <div class="menu_space">
                           <div class="menu_title">
                             <span><strong>Add Workflow</strong></span>
@@ -931,87 +931,92 @@
 
   <!--  THIS IS FOR Department AND Add Workflow to.. -->
 
- <script>
- // Wait for the DOM content to fully load
-document.addEventListener('DOMContentLoaded', function () {
-  
-  // Function to hide all menus and reset button styles
-  function hideAllMenusAndResetStyles() {
-    const openMenu = document.querySelector('.open_menu.filter_menu');
-    const workflowForm = document.querySelector('#workflow_decribe');
-    const filterOpenButton = document.querySelector('.filter_open');
-    const filterAddButton = document.querySelector('.filter_add');
-    
-    if (openMenu) openMenu.style.display = 'none';
-    if (workflowForm) workflowForm.style.display = 'none';
-    
-    // Reset background colors
-    if (filterOpenButton) filterOpenButton.style.backgroundColor = '';
-    if (filterAddButton) filterAddButton.style.backgroundColor = '';
-  }
-
-  // Handle the "Filter Open" button click
-  const filterOpenButton = document.querySelector('.filter_open');
-  if (filterOpenButton) {
-    filterOpenButton.addEventListener('click', function (event) {
-      const openMenu = document.querySelector('.open_menu.filter_menu');
-      
-      // Prevent hiding when clicking the button itself
-      event.stopPropagation();
-
-      // Hide all menus and reset styles before toggling
-      hideAllMenusAndResetStyles();
-
-      // Set background color for this button
-      filterOpenButton.style.backgroundColor = '#F2F2F2';
-
-      // Toggle the filter menu
-      if (openMenu && (openMenu.style.display === 'none' || openMenu.style.display === '')) {
-        openMenu.style.display = 'block';
-      }
-    });
-  } else {
-    console.error("Element .filter_open not found.");
-  }
-
-  // Handle the "Add Workflow" button click
-  const filterAddButton = document.querySelector('.filter_add');
-  if (filterAddButton) {
-    filterAddButton.addEventListener('click', function (event) {
-      const workflowForm = document.querySelector('#workflow_decribe');
-      
-      // Prevent hiding when clicking the button itself
-      event.stopPropagation();
-
-      // Hide all menus and reset styles before toggling
-      hideAllMenusAndResetStyles();
-
-      // Set background color for this button
-      filterAddButton.style.backgroundColor = '#F2F2F2';
-
-      // Toggle the workflow form
-      if (workflowForm && (workflowForm.style.display === 'none' || workflowForm.style.display === '')) {
-        workflowForm.style.display = 'block';
-      }
-    });
-  } else {
-    console.error("Element .filter_add not found.");
-  }
-
-  // Close menus when clicking outside the designated areas
-  document.addEventListener('click', function () {
-    hideAllMenusAndResetStyles();
-  });
-
-  // Prevent the document click handler from closing the menu when clicking inside the menu areas
-  const menuAreas = document.querySelectorAll('.open_menu.filter_menu, #workflow_decribe');
-  menuAreas.forEach(menu => {
-    menu.addEventListener('click', function (event) {
-      event.stopPropagation();
-    });
-  });
-});
- </script>
+  <script>
+    // Wait for the DOM content to fully load
+   document.addEventListener('DOMContentLoaded', function () {
+     
+     // Function to hide all menus and reset button styles
+     function hideAllMenusAndResetStyles() {
+       const openMenu = document.querySelector('.open_menu.filter_menu');
+       const workflowForm = document.querySelector('#workflow_decribe');
+       const workflowDecribeAfterSkip = document.querySelector('#workflow_decribe_after_skip');
+       const filterOpenButton = document.querySelector('.filter_open');
+       const filterAddButton = document.querySelector('.filter_add');
+       
+       
+       if (openMenu) openMenu.style.display = 'none';
+       if (workflowForm) workflowForm.style.display = 'none';
+       if (workflowDecribeAfterSkip) workflowDecribeAfterSkip.style.display = 'none';
+       
+       // Reset background colors
+       if (filterOpenButton) filterOpenButton.style.backgroundColor = '';
+       if (filterAddButton) filterAddButton.style.backgroundColor = '';
+       
+     }
+   
+     // Handle the "Filter Open" button click
+     const filterOpenButton = document.querySelector('.filter_open');
+     if (filterOpenButton) {
+       filterOpenButton.addEventListener('click', function (event) {
+         const openMenu = document.querySelector('.open_menu.filter_menu');
+         
+         // Prevent hiding when clicking the button itself
+         event.stopPropagation();
+   
+         // Hide all menus and reset styles before toggling
+         hideAllMenusAndResetStyles();
+   
+         // Set background color for this button
+         filterOpenButton.style.backgroundColor = '#F2F2F2';
+   
+         // Toggle the filter menu
+         if (openMenu && (openMenu.style.display === 'none' || openMenu.style.display === '')) {
+           openMenu.style.display = 'block';
+         }
+       });
+     } else {
+       console.error("Element .filter_open not found.");
+     }
+   
+     // Handle the "Add Workflow" button click
+     const filterAddButton = document.querySelector('.filter_add');
+     if (filterAddButton) {
+       filterAddButton.addEventListener('click', function (event) {
+         const workflowForm = document.querySelector('#workflow_decribe');
+         const workflowDecribeAfterSkip = document.querySelector('#workflow_decribe_after_skip');
+         
+         // Prevent hiding when clicking the button itself
+         event.stopPropagation();
+   
+         // Hide all menus and reset styles before toggling
+         hideAllMenusAndResetStyles();
+   
+         // Set background color for this button
+         filterAddButton.style.backgroundColor = '#F2F2F2';
+   
+         // Toggle the workflow form
+         if (workflowForm && (workflowForm.style.display === 'none' || workflowForm.style.display === '')) {
+           workflowForm.style.display = 'block';
+         }
+       });
+     } else {
+       console.error("Element .filter_add not found.");
+     }
+   
+     // Close menus when clicking outside the designated areas
+     document.addEventListener('click', function () {
+       hideAllMenusAndResetStyles();
+     });
+   
+     // Prevent the document click handler from closing the menu when clicking inside the menu areas
+     const menuAreas = document.querySelectorAll('.open_menu.filter_menu, #workflow_decribe');
+     menuAreas.forEach(menu => {
+       menu.addEventListener('click', function (event) {
+         event.stopPropagation();
+       });
+     });
+   });
+    </script>
  
 
  <!--  THIS IS FOR Add AND Setting -->
@@ -1114,17 +1119,24 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  const closeIcon = document.querySelector('.close_workflow_btn'); // Select the close icon
-  const addMenu = document.querySelector('.add_menu.filter_menu'); // Select the target div
+  // Select the close button and the form container
+  const closeFormBtn = document.querySelector('.close_form_btn');
+  const addMenu = document.querySelector('.workflow_add_menu.filter_menu');
 
-  if (closeIcon && addMenu) {
-    closeIcon.addEventListener('click', function () {
-      addMenu.style.display = 'none'; // Hide the div
+  // Log to make sure the elements are correctly selected
+  console.log(closeFormBtn, addMenu);
+
+  if (closeFormBtn && addMenu) {
+    // Add a click event listener to the close button
+    closeFormBtn.addEventListener('click', function () {
+      console.log('Close button clicked');
+      addMenu.style.display = 'none';  // Hide the form when clicked
     });
   } else {
-    console.error("Close icon or target div not found.");
+    console.error("Close button or form not found.");
   }
 });
+
 
  </script>
 
@@ -1137,7 +1149,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
- </script>
+ </scr>
   
   </body>
 </html>
