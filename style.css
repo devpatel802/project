@@ -128,7 +128,7 @@ header.frame-wrapper .row .text-right {text-align: right;position: relative;}
 .dashboard-menu .add_menu.filter_menu .menu_space .bg_white {background: #fff;font-size: 14px;line-height: 20px;padding: 10px;border: 1px solid #D0D5DD;border-radius: 8px;margin: 10px 0;}
 .dashboard-menu .add_menu.filter_menu .menu_space .bg_white p {margin: 0;}
 .dashboard-menu .add_menu.filter_menu .menu_space .add_item_form button#add {width: 100%;border: 2px solid transparent;background: #000;color: #fff;border-radius: 4px;padding: 8px;margin-top: 10px;cursor: pointer;transition: 0.5s all ease-in-out;letter-spacing: 1px;}
-.dashboard-menu .add_menu.filter_menu .menu_space .add_item_form button#add:hover {background: #F2F2F2;color: #000;border-color: #000;}
+/* .dashboard-menu .add_menu.filter_menu .menu_space .add_item_form button#add:hover {background: #F2F2F2;color: #000;border-color: #000;} */
 .dashboard-menu .add_menu.filter_menu .menu_title i.fa-solid.fa-xmark {font-size: 20px;}
 .menu_title i.fa-solid.fa-xmark {cursor: pointer;}
 .workflow_add_menu textarea {display: block;width: 100%;box-sizing: border-box;background: #F9FAFB;border: 1px solid #98A2B3;border-radius: 10px;padding: 10px;  margin: 20px 0 0;}
