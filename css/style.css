@@ -10,7 +10,7 @@ body {margin: 0;font-family: "Inter", sans-serif !important;background: linear-g
 .main_section .container .row {align-items: flex-start;}
 input::placeholder, select::placeholder, select option, select, button, textarea::placeholder, input[type="date"]::placeholder {font-family: "Inter", sans-serif;}
 ::-webkit-clear-button, ::-webkit-inner-spin-button {display: none;}
-input[type="date"] {cursor: pointer;display: block;padding-right: 10px;font-size: 16px;background: #fff url(/assets/images/calender.svg) right 1rem center no-repeat;}
+input[type="date"] {cursor: pointer;display: block;padding-right: 10px;font-size: 16px;background: #fff url(/images/calender.svg) right 1rem center no-repeat;}
 input {box-sizing: border-box;}
 .breadcrumb_page ul {padding: 0;margin: 20px 0 40px;display: flex;align-items: center;flex-wrap: wrap;}
 .breadcrumb_page ul li {padding-right: 35px;position: relative;}
@@ -123,7 +123,7 @@ header.frame-wrapper .row .text-right {text-align: right;position: relative;}
 .dashboard-menu .add_menu.filter_menu .add_item_form .form-group label {width: 100%;display: block;font-size: 14px;font-weight: 600;}
 .dashboard-menu .add_menu.filter_menu .add_item_form .form-group input {background: #fff;border: 1px solid #D0D5DD;border-radius: 8px;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;max-width: 100%;width: 100%;box-sizing: border-box;margin: 10px 0 15px;}
 .dashboard-menu .add_menu.filter_menu .add_item_form .form-group input:focus {outline: none;}
-.dashboard-menu .add_menu.filter_menu .add_item_form #choose_workflow {width: 100%;border: 1px solid #D0D5DD;border-radius: 8px;padding: 11px 10px;font-size: 12px;color: #737373;-webkit-appearance: none;-moz-appearance: none;appearance: none;background: #fff url(/assets/images/drop-down-black.svg) no-repeat;background-position: 95%;margin: 10px 0 15px;}
+.dashboard-menu .add_menu.filter_menu .add_item_form #choose_workflow {width: 100%;border: 1px solid #D0D5DD;border-radius: 8px;padding: 11px 10px;font-size: 12px;color: #737373;-webkit-appearance: none;-moz-appearance: none;appearance: none;background: #fff url(/images/drop-down-black.svg) no-repeat;background-position: 95%;margin: 10px 0 15px;}
 .dashboard-menu .add_menu.filter_menu .add_item_form #choose_workflow:focus {border: none;outline: none;}
 .dashboard-menu .add_menu.filter_menu .menu_space .bg_white {background: #fff;font-size: 14px;line-height: 20px;padding: 10px;border: 1px solid #D0D5DD;border-radius: 8px;margin: 10px 0;}
 .dashboard-menu .add_menu.filter_menu .menu_space .bg_white p {margin: 0;}
