@@ -262,7 +262,7 @@ header.frame-wrapper .row .text-right {text-align: right;position: relative;}
   height: 1px;
 }
 .user_information .user_title, .user_information .user_form .flex_wrap {
-  margin-top: 4px;
+  margin-top: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
