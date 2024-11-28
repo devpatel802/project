@@ -245,7 +245,7 @@ header.frame-wrapper .row .text-right {text-align: right;position: relative;}
   position: relative;
   z-index: 9;
   background: #f2f2f2;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 .user_information .user_title .user_edit a {
   color: #475467;
